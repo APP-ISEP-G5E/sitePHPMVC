@@ -1,0 +1,70 @@
+* {
+    font-family: Arial, Verdana, sans-serif;
+}
+
+#titre {
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    max-height: 60px;
+    flex-direction: row;
+    /*background-color: green;*/
+    justify-content: center;
+    align-items: center;
+}
+
+.photo {
+    padding-right: 10px;
+}
+
+h3 {
+    font-size: 2em;
+    /*background-color: red;*/
+}
+
+fieldset {
+    background-color: whitesmoke;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+#conteneur {
+    display: flex;
+    justify-content: space-around;
+    padding-right: 3%;
+}
+
+.element {
+    /*non utilisé pour l'instant*/
+}
+
+.haut { /* aligne Temps et la barre*/
+    display: flex;
+
+}
+
+.phaseControl {
+    margin-left: 32%;
+    margin-right: 6%;
+}
+
+.phase1 {
+    margin-left: 30%;
+    margin-right: 10%;
+
+}
+
+fieldset {
+    width: 35%;
+    border-width: 5px;
+}
+
+.barre { /*faire une barre verticale entre les deux fieldset         attention NE S'ADAPTE PAS LORSQU'ON CHANGE LA TAILLE DE L'ECRAN!*/
+    border: 1px dashed #000;
+    position: absolute;
+    width: 0%;
+    height: 15%;
+    left: 18%;
+    top: 29%;
+
+}

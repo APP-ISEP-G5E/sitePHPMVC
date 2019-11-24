@@ -1,0 +1,152 @@
+.rc
+{
+    position: absolute;
+    top: 90%;
+    left: 35%;
+}
+.trc
+{
+    position: absolute;
+    top: 90%;
+    left: 41%;
+}
+.sc
+{
+    position: absolute;
+    top:80%;
+    left:35%;
+}
+.fieldset
+{
+    position:absolute;
+    top:30%;
+    margin-left:30%;
+    margin-right:30%;
+    width:40%;
+    height:40%;
+    min-width:100px;
+    min-height:150px;
+    border-width: 5px;
+    border-color: dimgrey;
+    background-color:white;
+}
+legend{
+    font-size:2rem;
+
+}
+
+.fieldset2
+{
+    position:absolute;
+    top: 51.7%;
+    left:60%;
+    width:30%;
+    height:23.5%;
+    border-width: 5px;
+    border-color: blue;
+}
+.fieldset3
+{
+    position: absolute;
+    top:25%;
+    left:2%;
+    width:50%;
+    height:50%;
+    border-width:5px;
+    border-color:blue;
+}
+.fieldset4
+{
+    position:absolute;
+    top:25%;
+    left:60%;
+    width:30%;
+    height:23%;
+    border-width:5px;
+    border-color:blue;
+}
+.nu
+{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+.mp
+{
+    position: absolute;
+    top: 35%;
+    left: 10%;
+}
+.cnu
+{
+    position: absolute;
+    top:15%;
+    left:10%;
+}
+.cmp
+{
+    position: absolute;
+    top:40%;
+    left:10%;
+}
+.ec
+{
+    position: absolute;
+    top: 60%;
+    left:10%;
+    color:red;
+}
+.oubli
+{
+    position: absolute;
+    top: 50%;
+    left: 10%;
+}
+.thermo
+{
+    position:absolute;
+    top:15%;
+    left:2%;
+}
+.min
+{
+    position:absolute;
+    top:10%;
+    left:5%;
+}
+.max
+{
+    position:absolute;
+    top:35%;
+    left:5%;
+}
+.moy
+{
+    position: absolute;
+    top:60%;
+    left:5%;
+}
+.ia
+{
+    position: absolute;
+    top:85%;
+    left:5%;
+}
+.capteur
+{
+    position: absolute;
+    top:15%;
+    left:8%;
+}
+.at
+{
+    position: absolute;
+    top:5%;
+    left:3%;
+}
+
+.deconnexion{
+    font-size:3rem;
+    text-align:center;
+    color:red;
+}
