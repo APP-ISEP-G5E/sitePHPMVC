@@ -2,7 +2,7 @@
     <div id="scroll_boutons">
         <div id="Who">
             <h3> Qui sommes nous ?</h3>
-            <a href="#QuiSommesNous"><img id="flèches" src="pictures/flèches.png" height="100px" width="auto"></a>
+            <a href="#QuiSommesNous"><img id="flèches" src="pictures/fleches.png" height="100px" width="auto"></a>
         </div>
     </div>
 </div>
