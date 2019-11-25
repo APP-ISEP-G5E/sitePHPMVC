@@ -31,7 +31,7 @@ function rechercheParNom(PDO $bdd, string $nom): array {
  * @return array
  */
 function recupereTousUtilisateurs(PDO $bdd): array {
-    $query = 'SELECT * FROM users';
+    $query = 'SELECT login,mot_de_passe FROM users';
     return $bdd->query($query)->fetchAll();
 }
 
@@ -46,7 +46,6 @@ function ajouteUtilisateur(PDO $bdd, array $utilisateur) {
     $donnees->bindParam(":username", $utilisateur['username'], PDO::PARAM_STR);
     $donnees->bindParam(":password", $utilisateur['password']);
     return $donnees->execute();
-    
 }
 
 /**
@@ -54,8 +53,13 @@ function ajouteUtilisateur(PDO $bdd, array $utilisateur) {
  * @param array $utilisateur
  */
 function bddContient(PDO $bdd, array $utilisateur) {
-    $query = "SELECT login,mot_de_passe FROM users='".$utilisateur['username']."' AND mot_de_passe='".$utilisateur['password'];
-    return $bdd->query($query)->fetchAll();
+    $query=$bdd->prepare('SELECT login,mot_de_passe,type FROM users WHERE login = :pseudo');
+    $query->bindValue(':pseudo',$utilisateur['username'], PDO::PARAM_STR);
+    $query->execute();
+    return $query->fetch();
+}
+
+function typeUtilisateur(PDO $bdd, array $utilisateur) {
 
 }
 
