@@ -131,7 +131,24 @@ switch ($function) {
                 'password' => $_POST['connex_mdp']
             ];
             $connexion=bddContient($bdd,$values);
-            if(empty($connexion)) {
+            if($connexion['mot_de_passe'] == $_POST['connex_mdp']) {
+                $_SESSION['connecter']="Déconnexion";
+                $css="CSSaccueil";
+                if($connexion['type']=='admin'){
+                    $vue="accueiladmin";
+                }
+                elseif($connexion['type']=='gestionnaire'){
+                    $vue="accueilGestionnaire";
+
+                }
+                elseif($connexion['type']=='client'){
+                    $vue="accueil";
+
+                }
+
+
+            }
+            else {
                 $alerte = "Login ou mot de passe incorrect";
             }
         }
@@ -147,4 +164,9 @@ switch ($function) {
 
 include ('vues/header.php');
 include ('vues/' . $vue . '.php');
-include ('vues/footer.php');
+if ($function== 'accueil'){
+    include('vues/footer.php');
+}
+else{
+    include ('vues/footerFixed.php');
+}
