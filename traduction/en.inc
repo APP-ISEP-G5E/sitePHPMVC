@@ -2,10 +2,11 @@
 // fichier de langues en anglais
 
 //header
-define("_CALENDRIER","Calendar");
+define("_FAQH","FAQ");
 define("_ACCUEIL","Home");
 define("_MON_PROFIL","My profile");
 define("_DECONNEXION","Log out");
+define("_CONNEXION","Log in");
 
 //mon profil
 define("_NOM_PRENOM","Full name");

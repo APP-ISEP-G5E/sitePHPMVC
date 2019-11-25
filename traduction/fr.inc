@@ -2,7 +2,7 @@
 // fichier de langues en français
 
 //header
-define("_CALENDRIER","Calendrier");
+define("_FAQH","FAQ");
 define("_ACCUEIL","Accueil");
 define("_MON_PROFIL","Mon profil");
 define("_DECONNEXION","Deconnexion");
