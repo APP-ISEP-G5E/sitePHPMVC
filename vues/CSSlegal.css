@@ -127,9 +127,37 @@ p1 {
 h1,h2 {
     color: #DC143C;
     text-align: center;
+    margin-top: 2%;
 }
 
 p {
     font-family: verdana;
     font-size: 20px;
+    color: dimgray;
+    padding: 1% 10%;
+    text-align: justify;
+}
+
+.contact{
+    display: flex;
+    width: 100%;
+}
+
+#mail{
+    margin: 15% 0;
+    text-align: center;
+    width: 50%;
+}
+#mail p{
+    text-align: center;
+}
+
+#telephone{
+    width: 50%;
+    margin: 15% 0;
+    text-align: center;
+    width: 50%;
+}
+#telephone p{
+    text-align: center;
 }
