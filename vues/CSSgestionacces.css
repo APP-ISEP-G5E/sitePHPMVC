@@ -1,0 +1,31 @@
+fieldset{
+    width: 100%;
+}
+.haut0{
+    border-style: solid;
+    border-width: 2px;
+    width: 26.5%;
+}
+.haut{
+
+    border-style: solid;
+    border-width: 2px;
+
+
+}
+.commentaire{
+    font-size: 0.6em;
+}
+
+input{
+    margin-top:12px;
+    margin-bottom: 5px;
+}
+
+.ensemble{
+    display: flex;
+    padding-top: 2%;
+    justify-content: space-around;
+    /*background-color: green;*/
+    /*width:100%;*/
+}
