@@ -4,7 +4,7 @@
 include('requetes.generiques.php');
 
 //on définit le nom de la table
-$table = "users";
+$table = "utilisateur";
 
 // requêtes spécifiques à la table des capteurs
 
@@ -17,7 +17,7 @@ $table = "users";
  */
 function rechercheParNom(PDO $bdd, string $nom): array {
     
-    $statement = $bdd->prepare('SELECT * FROM  users WHERE username = :username');
+    $statement = $bdd->prepare('SELECT * FROM  utilisateur WHERE username = :username');
     $statement->bindParam(":username", $value);
     $statement->execute();
     
@@ -31,7 +31,7 @@ function rechercheParNom(PDO $bdd, string $nom): array {
  * @return array
  */
 function recupereTousUtilisateurs(PDO $bdd): array {
-    $query = 'SELECT login,mot_de_passe FROM users';
+    $query = 'SELECT login,mot_de_passe FROM utilisateur';
     return $bdd->query($query)->fetchAll();
 }
 
@@ -41,7 +41,7 @@ function recupereTousUtilisateurs(PDO $bdd): array {
  */
 function ajouteUtilisateur(PDO $bdd, array $utilisateur) {
     
-    $query = ' INSERT INTO users (username, password) VALUES (:username, :password)';
+    $query = ' INSERT INTO utilisateur (username, password) VALUES (:username, :password)';
     $donnees = $bdd->prepare($query);
     $donnees->bindParam(":username", $utilisateur['username'], PDO::PARAM_STR);
     $donnees->bindParam(":password", $utilisateur['password']);
@@ -53,7 +53,7 @@ function ajouteUtilisateur(PDO $bdd, array $utilisateur) {
  * @param array $utilisateur
  */
 function bddContient(PDO $bdd, array $utilisateur) {
-    $query=$bdd->prepare('SELECT login,mot_de_passe,type FROM users WHERE login = :pseudo');
+    $query=$bdd->prepare('SELECT nom,prenom,adresse_mail,numero_telephone,login,mot_de_passe,type FROM utilisateur WHERE login = :pseudo');
     $query->bindValue(':pseudo',$utilisateur['username'], PDO::PARAM_STR);
     $query->execute();
     return $query->fetch();
