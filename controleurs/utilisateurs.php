@@ -22,10 +22,7 @@ if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
 
 if (!isset($_SESSION['connecter']) || empty($_SESSION['connecter'])) {
     $_SESSION['connecter'] = _CONNEXION;
-} else {
-    $_SESSION['connecter'] = $_GET['connecter'];
 }
-
 
 switch ($function) {
 
@@ -112,8 +109,11 @@ switch ($function) {
         break;
 
     case 'langue':
+        $vue="accueil";
+        $css="CSSaccueil";
+        $title="Accueil";
         if ($_SESSION['lang']=="fr"){
-            $_SESSION['lang']=="en";
+            $_SESSION['lang']="en";
         }
         elseif ($_SESSION['lang']=="en"){
             $_SESSION['lang']="fr";
@@ -132,7 +132,12 @@ switch ($function) {
             ];
             $connexion=bddContient($bdd,$values);
             if($connexion['mot_de_passe'] == $_POST['connex_mdp']) {
-                $_SESSION['connecter']="Déconnexion";
+                $_SESSION['connecter'] =_DECONNEXION ;
+                $_SESSION['type'] = $connexion['type'] ;
+                $_SESSION['nom'] = $connexion['nom'];
+                $_SESSION['prenom'] =$connexion['prenom'];
+                $_SESSION['numero_telephone'] =$connexion['numero_telephone'];
+                $_SESSION['email'] =$connexion['email'];
                 $css="CSSaccueil";
                 if($connexion['type']=='admin'){
                     $vue="accueiladmin";
@@ -164,7 +169,7 @@ switch ($function) {
 
 include ('vues/header.php');
 include ('vues/' . $vue . '.php');
-if ($function== 'accueil'){
+if ($vue== 'accueil'){
     include('vues/footer.php');
 }
 else{
