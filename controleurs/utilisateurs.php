@@ -121,8 +121,8 @@ switch ($function) {
         break;
 
     case 'connexion':
-        $css="authentification";
-        $vue= "authentification";
+        $css="CSSconnexion";
+        $vue= "connexion";
         $alerte = false;
         // Cette partie du code est appelée si le formulaire a été posté
         if (isset($_POST['connex_login']) and isset($_POST['connex_mdp'])) {
@@ -169,7 +169,7 @@ switch ($function) {
 
 include ('vues/header.php');
 include ('vues/' . $vue . '.php');
-if ($vue== 'accueil'){
+if ($vue == 'accueil'){
     include('vues/footer.php');
 }
 else{
