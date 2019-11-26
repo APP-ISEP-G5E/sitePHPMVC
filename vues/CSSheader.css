@@ -128,12 +128,15 @@ header ul {
     height: 40px;
     width: 100%;
     background-color: #f5f5f7;
+    margin:auto;
 }
 
 #notFixed{
     height: 40px;
     width: 100%;
     background-color: #f5f5f7;
+    margin:auto;
+
 }
 /*fin de modification du footer*/
 
