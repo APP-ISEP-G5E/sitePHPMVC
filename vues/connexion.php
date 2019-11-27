@@ -10,11 +10,12 @@
         <input type="checkbox" id="souvenir" value="Rester connecté"/>
         <label for="souvenir"><?php echo _SOUVENIR; ?></label></br>
         <a href="index.php?cible=utilisateurs&fonction=contacter">Mot de passe oublié ?</a>
-        <input type="submit" value="SUBMIT">
-
-        <?php echo AfficheAlerte($alerte); ?>
+        <input type="submit" value="SUBMIT" onclick="Message()">
     </form>
 </div>
+<div id="espace">
 
-
+</div>
+<?php if($alerte){  ?>
+<?php echo '<SCRIPT language="Javascript">alert(\''.$alerte.'\');</SCRIPT>'; }?>
 
