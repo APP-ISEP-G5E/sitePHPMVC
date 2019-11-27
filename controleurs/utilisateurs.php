@@ -28,7 +28,7 @@ switch ($function) {
 
     case 'accueil':
         //affichage de l'accueil
-        $css="CSSaccueil";
+        $css = "CSSaccueil";
         $vue = "accueil";
         $title = "Accueil";
         break;
@@ -42,10 +42,10 @@ switch ($function) {
         // Cette partie du code est appelée si le formulaire a été posté
         if (isset($_POST['username']) and isset($_POST['password'])) {
 
-            if( !estUneChaine($_POST['username'])) {
+            if (!estUneChaine($_POST['username'])) {
                 $alerte = "Le nom d'utilisateur doit être une chaîne de caractère.";
 
-            } else if( !estUnMotDePasse($_POST['password'])) {
+            } else if (!estUnMotDePasse($_POST['password'])) {
                 $alerte = "Le mot de passe n'est pas correct.";
 
             } else {
@@ -78,86 +78,85 @@ switch ($function) {
 
         $liste = recupereTousUtilisateurs($bdd);
 
-        if(empty($liste)) {
+        if (empty($liste)) {
             $alerte = "Aucun utilisateur inscrit pour le moment";
         }
 
         break;
 
     case 'profil':
-        $css="CSSprofil";
-        $vue= "Profil";
-        $title="Profil";
+        $css = "CSSprofil";
+        $vue = "Profil";
+        $title = "Profil";
         break;
 
     case 'contacter':
-        $css="CSSlegal";
-        $vue= "nousContacter";
-        $title="Nous Contacter";
+        $css = "CSSlegal";
+        $vue = "nousContacter";
+        $title = "Nous Contacter";
         break;
 
     case 'cgu':
-        $css="CSSlegal";
-        $vue= "cgu";
-        $title="CGU";
+        $css = "CSSlegal";
+        $vue = "cgu";
+        $title = "CGU";
         break;
 
     case 'mentionLegale':
-        $css="CSSlegal";
-        $vue= "mentionLegale";
-        $title="Mentions légales";
+        $css = "CSSlegal";
+        $vue = "mentionLegale";
+        $title = "Mentions légales";
         break;
 
     case 'langue':
-        $vue="accueil";
-        $css="CSSaccueil";
-        $title="Accueil";
-        if ($_SESSION['lang']=="fr"){
-            $_SESSION['lang']="en";
-        }
-        elseif ($_SESSION['lang']=="en"){
-            $_SESSION['lang']="fr";
+        $vue = "accueil";
+        $css = "CSSaccueil";
+        $title = "Accueil";
+        if ($_SESSION['lang'] == "fr") {
+            $_SESSION['lang'] = "en";
+        } elseif ($_SESSION['lang'] == "en") {
+            $_SESSION['lang'] = "fr";
         }
         break;
 
     case 'connexion':
-        $css="CSSconnexion";
-        $vue= "connexion";
+        $css = "CSSconnexion";
+        $vue = "connexion";
         $alerte = false;
         // Cette partie du code est appelée si le formulaire a été posté
         if (isset($_POST['connex_login']) and isset($_POST['connex_mdp'])) {
-            $values = [
-                'username' => $_POST['connex_login'],
-                'password' => $_POST['connex_mdp']
-            ];
-            $connexion=bddContient($bdd,$values);
-            if($connexion['mot_de_passe'] == $_POST['connex_mdp']) {
-                $_SESSION['connecter'] =_DECONNEXION ;
-                $_SESSION['type'] = $connexion['type'] ;
-                $_SESSION['nom'] = $connexion['nom'];
-                $_SESSION['prenom'] =$connexion['prenom'];
-                $_SESSION['numero_telephone'] =$connexion['numero_telephone'];
-                $_SESSION['email'] =$connexion['email'];
-                $css="CSSaccueil";
-                if($connexion['type']=='admin'){
-                    $vue="accueiladmin";
+            if ($_POST['connex_login'] == "" or $_POST['connex_mdp'] =="") {
+                $alerte = "Aucune saisie";
+            } else {
+                $values = [
+                    'username' => $_POST['connex_login'],
+                    'password' => $_POST['connex_mdp']
+                ];
+                $connexion = bddContient($bdd, $values);
+                if ($connexion['mot_de_passe'] == $_POST['connex_mdp']) {
+                    $_SESSION['connecter'] = _DECONNEXION;
+                    $_SESSION['type'] = $connexion['type'];
+                    $_SESSION['nom'] = $connexion['nom'];
+                    $_SESSION['prenom'] = $connexion['prenom'];
+                    $_SESSION['numero_telephone'] = $connexion['numero_telephone'];
+                    $_SESSION['email'] = $connexion['email'];
+                    $css = "CSSaccueil";
+                    if ($connexion['type'] == 'admin') {
+                        $vue = "accueiladmin";
+                    } elseif ($connexion['type'] == 'gestionnaire') {
+                        $vue = "accueilGestionnaire";
+
+                    } elseif ($connexion['type'] == 'client') {
+                        $vue = "accueil";
+
+                    }
+                } else {
+                    $alerte = "Login ou mot de passe incorrect";
                 }
-                elseif($connexion['type']=='gestionnaire'){
-                    $vue="accueilGestionnaire";
-
-                }
-                elseif($connexion['type']=='client'){
-                    $vue="accueil";
-
-                }
-
-
             }
-            else {
-                $alerte = "Login ou mot de passe incorrect";
-            }
+
         }
-        $title="Connexion";
+        $title = "Connexion";
         break;
 
     default:
@@ -167,11 +166,10 @@ switch ($function) {
         $message = "Erreur 404 : la page recherchée n'existe pas.";
 }
 
-include ('vues/header.php');
-include ('vues/' . $vue . '.php');
-if ($vue == 'accueil'){
+include('vues/header.php');
+include('vues/' . $vue . '.php');
+if ($vue == 'accueil') {
     include('vues/footer.php');
-}
-else{
-    include ('vues/footerFixed.php');
+} else {
+    include('vues/footerFixed.php');
 }
