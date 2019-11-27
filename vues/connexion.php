@@ -8,8 +8,8 @@
         <input type="password" id="password" name="connex_mdp" placeholder="password">
 
         <input type="checkbox" id="souvenir" value="Rester connecté"/>
-        <label for="souvenir"><?php echo _SOUVENIR; ?></label>
-
+        <label for="souvenir"><?php echo _SOUVENIR; ?></label></br>
+        <a href="index.php?cible=utilisateurs&fonction=contacter">Mot de passe oublié ?</a>
         <input type="submit" value="SUBMIT">
 
         <?php echo AfficheAlerte($alerte); ?>
