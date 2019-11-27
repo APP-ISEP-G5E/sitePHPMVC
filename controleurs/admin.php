@@ -27,55 +27,16 @@ switch ($function) {
         $title = "Accueil Admin";
         break;
 
-
-    case 'inscription':
-        // inscription d'un nouvel utilisateur
-        $vue = "inscription";
-        $alerte = false;
-
-        // Cette partie du code est appelée si le formulaire a été posté
-        if (isset($_POST['username']) and isset($_POST['password'])) {
-
-            if( !estUneChaine($_POST['username'])) {
-                $alerte = "Le nom d'utilisateur doit être une chaîne de caractère.";
-
-            } else if( !estUnMotDePasse($_POST['password'])) {
-                $alerte = "Le mot de passe n'est pas correct.";
-
-            } else {
-                // Tout est ok, on peut inscrire le nouvel utilisateur
-
-                //
-                $values = [
-                    'username' => $_POST['username'],
-                    'password' => crypterMdp($_POST['password']) // on crypte le mot de passe
-                ];
-
-                // Appel à la BDD à travers une fonction du modèle.
-                $retour = ajouteUtilisateur($bdd, $values);
-
-                if ($retour) {
-                    $alerte = "Inscription réussie";
-                } else {
-                    $alerte = "L'inscription dans la BDD n'a pas fonctionné";
-                }
-            }
-        }
-        $title = "Inscription";
+    case 'gestcandidat':
+        $css="CSSgestionacces";
+        $vue="creerCandidat";
+        $title="Créer / Supprimer un candidat";
         break;
 
-    case 'liste':
-        // Liste des utilisateurs déjà enregistrés
-        $vue = "liste";
-        $title = "Liste des utilisateurs inscrits";
-        $entete = "Voici la liste :";
-
-        $liste = recupereTousUtilisateurs($bdd);
-
-        if(empty($liste)) {
-            $alerte = "Aucun utilisateur inscrit pour le moment";
-        }
-
+    case 'gestgestionnaire':
+        $css="CSSgestionacces";
+        $vue="creerGestionnaire";
+        $title="Créer / Supprimer un gestionnaire";
         break;
 
     default:
