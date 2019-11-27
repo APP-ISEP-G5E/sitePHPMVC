@@ -9,8 +9,8 @@ define("_DECONNEXION","Deconnexion");
 define("_CONNEXION","Connexion");
 
 //mon profil
-define("_NOM_PRENOM","NOM Prénom");
-define("_ADRESSE_EMAIL","Adresse email");
+define("_NOM_PRENOM","Nom Prénom");
+define("_ADRESSE_EMAIL","Adresse mail");
 define("_NUMERO","Numéro de téléphone");
 define("_MODIFIER","Modifier");
 define("_PROFIL","Mon Profil");
