@@ -17,8 +17,8 @@
             <button onclick="Accesbtn()" class="dropbtn">Gestion des droits d'accès</button>
             <div id="accesDropdown" class="dropdown-content">
                 <ul>
-                    <div class="borderbox"><a href="">Créer/supprimer un compte candidat</a></div>
-                    <div class="borderbox"><a href="">Créer/supprimer un compte gestionnaire</a></div>
+                    <div class="borderbox"><a href="index.php?cible=admin&fonction=gestcandidat">Créer/supprimer un compte candidat</a></div>
+                    <div class="borderbox"><a href="index.php?cible=admin&fonction=gestgestionnaire">Créer/supprimer un compte gestionnaire</a></div>
                     <div class="borderbox"><a href="">Modifier un mot de passe</a></div>
                 </ul>
             </div>
