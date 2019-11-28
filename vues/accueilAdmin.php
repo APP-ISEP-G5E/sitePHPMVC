@@ -1,3 +1,5 @@
+<a href="index.php?cible=admin&fonction=gestcandidat">Gestion candidat</a>
+<a href="index.php?cible=admin&fonction=gestgestionnaire">Gestion gestionnaire</a>
 <div class="box">
     <div class="box1">
         <div class="dropdown">
