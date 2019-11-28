@@ -38,9 +38,19 @@ switch ($function) {
 
     case 'accueil':
         //affichage de l'accueil
-        $css = "CSSaccueil";
-        $vue = "accueil";
-        $title = "Accueil";
+        if ($_SESSION['type'] == 'null' || $_SESSION['type'] == 'client') {
+            $css = "CSSaccueil";
+            $vue = "accueil";
+            $title = "Accueil";
+        } elseif ($_SESSION['type'] == 'gestionnaire'){
+            $css = "CSSaccueil";
+            $vue = "accueilGestionnaire";
+            $title = "AccueilGestionnaire";
+        } elseif ($_SESSION['type'] == 'admin'){
+            $css = "CSSaccueil";
+            $vue = "accueilAdmin";
+            $title = "AccueilAdmin";
+        }
         break;
 
 
@@ -95,7 +105,7 @@ switch ($function) {
         break;
 
     case 'profil':
-        if ($_SESSION['type']=='admin') {
+        if ($_SESSION['connecter'] == _CONNEXION) {
             $css = "CSSprofil";
             $vue = "Profil";
             $title = "Profil";
@@ -161,7 +171,6 @@ switch ($function) {
                         $css = "CSSaccueil";
                         if ($connexion['type'] == 'admin') {
                             $vue = "accueiladmin";
-                            $css = "CSSaccueil";
                             $title = 'admin';
                         } elseif ($connexion['type'] == 'gestionnaire') {
                             $vue = "accueilGestionnaire";
