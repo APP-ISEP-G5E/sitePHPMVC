@@ -1,6 +1,3 @@
-<div id="vide">
-
-</div>
 <div id="contenuGestion">
     <div id="gestion">
         <h1 class="title_gest"><?php echo _CREER_GESTIONNAIRE; ?></h1>

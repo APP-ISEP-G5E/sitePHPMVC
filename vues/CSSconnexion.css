@@ -38,6 +38,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url("../pictures/Pattern_blanc.png");
 
 }
 #connexion {
@@ -54,6 +55,7 @@ body{
     min-height:300px;
     box-shadow: 8px 8px 2px 1px rgba(0, 0, 255, .2);
     min-width:400px;
+    background-color: white;
 }
 #espace {
     height:200px;
