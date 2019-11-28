@@ -20,8 +20,18 @@ if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
     $function = $_GET['fonction'];
 }
 
-if (!isset($_SESSION['connecter']) || empty($_SESSION['connecter'])) {
+session_start();
+
+if (!isset($_SESSION['connecter']) || empty($_SESSION['connecter']))  {
     $_SESSION['connecter'] = _CONNEXION;
+} else {
+    $_SESSION['connecter'] = $_SESSION['connecter'];
+}
+
+if (!isset($_SESSION['connecter']) || empty($_SESSION['connecter']))  {
+    $_SESSION['type'] = 'null';
+} else {
+    $_SESSION['type'] = $_SESSION['type'];
 }
 
 switch ($function) {
@@ -85,9 +95,15 @@ switch ($function) {
         break;
 
     case 'profil':
-        $css = "CSSprofil";
-        $vue = "Profil";
-        $title = "Profil";
+        if ($_SESSION['type']=='admin') {
+            $css = "CSSprofil";
+            $vue = "Profil";
+            $title = "Profil";
+        } else{
+            $vue = "erreur404";
+            $css = "CSSprofil";
+            $title = "Non connecter";
+        }
         break;
 
     case 'contacter':
@@ -120,43 +136,58 @@ switch ($function) {
         break;
 
     case 'connexion':
-        $css = "CSSconnexion";
-        $vue = "connexion";
-        $alerte = false;
-        // Cette partie du code est appelée si le formulaire a été posté
-        if (isset($_POST['connex_login']) and isset($_POST['connex_mdp'])) {
-            if ($_POST['connex_login'] == "" or $_POST['connex_mdp'] =="") {
-                $alerte = "Aucune saisie";
-            } else {
-                $values = [
-                    'username' => $_POST['connex_login'],
-                    'password' => $_POST['connex_mdp']
-                ];
-                $connexion = bddContient($bdd, $values);
-                if ($connexion['mot_de_passe'] == $_POST['connex_mdp']) {
-                    $_SESSION['connecter'] = _DECONNEXION;
-                    $_SESSION['type'] = $connexion['type'];
-                    $_SESSION['nom'] = $connexion['nom'];
-                    $_SESSION['prenom'] = $connexion['prenom'];
-                    $_SESSION['numero_telephone'] = $connexion['numero_telephone'];
-                    $_SESSION['email'] = $connexion['email'];
-                    $css = "CSSaccueil";
-                    if ($connexion['type'] == 'admin') {
-                        $vue = "accueiladmin";
-                    } elseif ($connexion['type'] == 'gestionnaire') {
-                        $vue = "accueilGestionnaire";
-
-                    } elseif ($connexion['type'] == 'client') {
-                        $vue = "accueil";
-
-                    }
+        if ($_SESSION['connecter'] == _CONNEXION) {
+            $css = "CSSconnexion";
+            $vue = "connexion";
+            $title = "Connexion";
+            $alerte = false;
+            // Cette partie du code est appelée si le formulaire a été posté
+            if (isset($_POST['connex_login']) and isset($_POST['connex_mdp'])) {
+                if ($_POST['connex_login'] == "" or $_POST['connex_mdp'] == "") {
+                    $alerte = "Aucune saisie";
                 } else {
-                    $alerte = "Login ou mot de passe incorrect";
-                }
-            }
+                    $values = [
+                        'username' => $_POST['connex_login'],
+                        'password' => $_POST['connex_mdp']
+                    ];
+                    $connexion = bddContient($bdd, $values);
+                    if ($connexion['mot_de_passe'] == $_POST['connex_mdp']) {
+                        $_SESSION['connecter'] = _DECONNEXION;
+                        $_SESSION['type'] = $connexion['type'];
+                        $_SESSION['nom'] = $connexion['nom'];
+                        $_SESSION['prenom'] = $connexion['prenom'];
+                        $_SESSION['numero_telephone'] = $connexion['numero_telephone'];
+                        $_SESSION['email'] = $connexion['adresse_mail'];
+                        $css = "CSSaccueil";
+                        if ($connexion['type'] == 'admin') {
+                            $vue = "accueiladmin";
+                            $css = "CSSaccueil";
+                            $title = 'admin';
+                        } elseif ($connexion['type'] == 'gestionnaire') {
+                            $vue = "accueilGestionnaire";
 
+                        } elseif ($connexion['type'] == 'client') {
+                            $vue = "accueil";
+
+                        }
+                    } else {
+                        $alerte = "Login ou mot de passe incorrect";
+                    }
+                }
+
+            }
+        } else {
+            $css="CSSaccueil";
+            $vue = "accueil";
+            $title = "Accueil";
+            $alerte = false;
+            $_SESSION['connecter'] = _CONNEXION;
+            $_SESSION['type'] = 'null';
+            $_SESSION['nom'] = 'null';
+            $_SESSION['prenom'] = 'null';
+            $_SESSION['numero_telephone'] = 'null';
+            $_SESSION['email'] = 'null';
         }
-        $title = "Connexion";
         break;
 
     default:
