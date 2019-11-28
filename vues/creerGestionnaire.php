@@ -1,62 +1,36 @@
-<div class="haut0"><p>Gestion des droits d'accès</p></div>
+<div id="vide">
 
-<div class="ensemble">
-    <div class="gauche">
-        <div class="haut">
-            <p>Créer un compte Gestionnaire</p>
-        </div>
-        <form method="post">       <!--action="traitement.php"-->
-            <fieldset>
-                <div>
-                    <label for="pseudo">Nom d'utilisateur<br/></label>
-                    <input type="text" name="pseudo" id="pseudo" autofocus required/>
-                    <span class="commentaire"><br/>Un mot de passe aléatoire sera envoyé au gestionnaire <br/><br/></span>
-                </div>
-                <div>
-                    <label for="mailGestionnaire">Adresse courriel du gestionnaire<br/></label>
-                    <input type="email" name="email" id="mailGestionnaire" required/>
-                </div>
-                <div>
+</div>
+<div id="contenuGestion">
+    <div id="gestion">
+        <h1 class="title_gest"><?php echo _CREER_GESTIONNAIRE; ?></h1>
+        <form method="POST" action="">
+            <label for="username"><?php echo _SAISIR_GEST; ?></label>
+            <input type="text" id="username" name="connex_login" placeholder="username">
 
-                    <label for="passAdmin"><br/>Votre mot de passe<br/></label>
-                    <input type="password" name="pass" id="passAdmin" required/>
-                </div>
+            <label for="password"><?php echo _SAISIR_GESTIONNAIRE; ?></label>
+            <input type="text" id="password" name="connex_mdp" placeholder="email adress">
 
-            </fieldset>
-            <input type="submit" value="Confirmer"/>
+            <label for="password"><?php echo _SAISIR_MDP; ?></label>
+            <input type="password" id="password" name="connex_mdp" placeholder="password">
+
+            <input type="submit" value="SUBMIT">
         </form>
-
     </div>
 
+    <div id="gestion">
+        <h1 class="title_gest"><?php echo _SUP_GESTIONNAIRE; ?></h1>
+        <form method="POST" action="">
+            <label for="username"><?php echo _SAISIR_GEST; ?></label>
+            <input type="text" id="username" name="connex_login" placeholder="username">
 
-    <div class="droit">
-        <div class="haut">
-            <p>Supprimer un compte gestionnaire</p>
-        </div>
-        <form method="post">       <!--action="traitement.php"-->
-            <fieldset>
-                <div>
-                    <label for="pseudo">Nom d'utilisateur<br/></label>
-                    <input type="text" name="pseudo" class="pseudo" autofocus required/>
-                    <!--ici on n'a pas id="pseudo" mais class="pseudo", créera un potentiel bug-->
-                </div>
-                <div>
-                    <label for="nom">Nom du gestionnaire<br/></label>
-                    <input type="text" name="nom" id="nom" required/>
-                </div>
-                <div>
-                    <label for="prenom">Prénom du gestionnaire<br/></label>
-                    <input type="text" name="prenom" id="prenom" required/>
-                </div>
-                <div>
-                    <label for="passAdmin">Votre mot de passe<br/></label>
-                    <input type="password" name="pass" class="passAdmin" required/>
-                    <!--ici on n'a pas id="nom" mais un class, créera un potentiel bug-->
-                </div>
+            <label for="password"><?php echo _SAISIR_GESTIONNAIRE; ?></label>
+            <input type="text" id="password" name="connex_mdp" placeholder="email adress">
 
-            </fieldset>
-            <input type="submit" value="Confirmer"/>
+            <label for="password"><?php echo _SAISIR_MDP; ?></label>
+            <input type="password" id="password" name="connex_mdp" placeholder="password">
+
+            <input type="submit" value="SUBMIT">
         </form>
-
     </div>
 </div>
