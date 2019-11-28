@@ -20,8 +20,6 @@ if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
     $function = $_GET['fonction'];
 }
 
-session_start();
-
 if (!isset($_SESSION['connecter']) || empty($_SESSION['connecter']))  {
     $_SESSION['connecter'] = _CONNEXION;
 } else {
@@ -30,8 +28,6 @@ if (!isset($_SESSION['connecter']) || empty($_SESSION['connecter']))  {
 
 if (!isset($_SESSION['connecter']) || empty($_SESSION['connecter']))  {
     $_SESSION['type'] = 'null';
-} else {
-    $_SESSION['type'] = $_SESSION['type'];
 }
 
 switch ($function) {
