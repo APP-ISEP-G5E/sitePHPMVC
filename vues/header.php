@@ -21,4 +21,3 @@
         </ul>
     </nav>
 </header>
-<div id="Hplace"></div>
