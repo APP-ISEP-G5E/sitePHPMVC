@@ -105,7 +105,7 @@ switch ($function) {
         break;
 
     case 'profil':
-        if ($_SESSION['connecter'] == _CONNEXION) {
+        if ($_SESSION['connecter'] == _DECONNEXION) {
             $css = "CSSprofil";
             $vue = "Profil";
             $title = "Profil";
