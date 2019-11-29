@@ -64,7 +64,6 @@ switch ($function) {
 
 
         }
-        $title = "Inscription";
         break;
 
     case 'gestgestionnaire':
@@ -72,7 +71,6 @@ switch ($function) {
         $vue="creerGestionnaire";
         $title="Créer / Supprimer un gestionnaire";
         // inscription d'un nouvel utilisateur
-        $vue = "inscription";
         $alerte = false;
 
         // Cette partie du code est appelée si le formulaire a été posté
@@ -94,9 +92,7 @@ switch ($function) {
             } else {
                 $alerte = "L'inscription dans la BDD n'a pas fonctionné";
             }
-
         }
-        $title = "Inscription";
         break;
 
     default:
