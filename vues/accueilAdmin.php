@@ -1,76 +1,53 @@
-<div id="vide"></div>
+<div id="vide" xmlns="http://www.w3.org/1999/html"></div>
 <a href="index.php?cible=admin&fonction=gestcandidat">Gestion candidat</a>
 <a href="index.php?cible=admin&fonction=gestgestionnaire">Gestion gestionnaire</a>
 <div class="box">
     <div class="box1">
-        <div class="dropdown">
-            <button onclick="Alertebtn()" class="dropbtn">Alerte</button>
-            <div id="alerteDropdown" class="dropdown-content">
-                <ul>
-                    <div class="borderbox"><a href="">Alerte capteur température</a></div>
-                    <div class="borderbox"><a href="">Alerte capteur rythme cardiaque</a></div>
-                    <div class="borderbox"><a href="">Alerte capteur sonore</a></div>
-                </ul>
-            </div>
+        <h1>Alerte : </h1>
+            <ul>
+                <li><a href="">Alerte capteur température</a></li>
+                <li><a href="">Alerte capteur rythme cardiaque</a></li>
+                <li><a href="">Alerte capteur sonore</a></li>
+            </ul>
         </div>
-    </div>
 
     <div class="box2">
-        <div class="dropdown">
-            <button onclick="Accesbtn()" class="dropbtn">Gestion des droits d'accès</button>
-            <div id="accesDropdown" class="dropdown-content">
-                <ul>
-                    <div class="borderbox"><a href="index.php?cible=admin&fonction=gestcandidat">Créer/supprimer un compte candidat</a></div>
-                    <div class="borderbox"><a href="index.php?cible=admin&fonction=gestgestionnaire">Créer/supprimer un compte gestionnaire</a></div>
-                    <div class="borderbox"><a href="">Modifier un mot de passe</a></div>
-                </ul>
-            </div>
-        </div>
+        <h1>Gestion droits d'accès : </h1>
+            <ul>
+                <li><a href="index.php?cible=admin&fonction=gestcandidat">Créer/supprimer un compte candidat</a></li>
+                <li><a href="index.php?cible=admin&fonction=gestgestionnaire">Créer/supprimer un compte gestionnaire</a></li>
+                <li><a href="">Modifier un mot de passe</a></li>
+            </ul>
     </div>
 </div>
 
 <div class="box">
     <div class="box1">
-        <div class="dropdown">
-            <button onclick="Capteurbtn()" class="dropbtn">gérer les capteurs</button>
-            <div id="capteurDropdown" class="dropdown-content">
-                <ul>
-                    <div class="borderbox"><a href="">Modifier les seuils des capteurs</a></div>
-                    <div class="borderbox"><a href="">Ajouter un capteur</a></div>
-                    <div class="borderbox"><a href="">Enlever un capteur</a></div>
-                </ul>
-            </div>
-        </div>
+        <h1>Gestion capteurs : </h1>
+            <ul>
+                <li><a href="">Modifier les seuils des capteurs</a></li>
+                <li><a href="">Ajouter un capteur</a></li>
+                <li><a href="">Enlever un capteur</a></li>
+            </ul>
     </div>
 
+
     <div class="box2">
-        <div class="dropdown">
-            <div class="box3">
-                <a href="">Données des candidats</a>
-            </div>
-        </div>
+        <h1><a href="">Données des candidats</a></h1>
     </div>
 </div>
 
 <div class="box">
     <div class="box1">
-        <div class="dropdown">
-            <button onclick="Acctionneurbtn()" class="dropbtn">gérer les actionneurs</button>
-            <div id="acctionneurDropdown" class="dropdown-content">
-                <ul>
-                    <div class="borderbox"><a href="">Modifier les seuils des actionneurs</a></div>
-                    <div class="borderbox"><a href="">Ajouter un Actionneur</a></div>
-                    <div class="borderbox"><a href="">Enlever un Actionneur</a></div>
-                </ul>
-            </div>
-        </div>
+        <h1>Gestion actionneurs : </h1>
+            <ul>
+                <li><a href="">Modifier les seuils des actionneurs</a></li>
+                <li><a href="">Ajouter un Actionneur</a></li>
+                <li><a href="">Enlever un Actionneur</a></li>
+            </ul>
     </div>
 
     <div class="box2">
-        <div class="dropdown">
-            <div class="box3">
-                <a href="">Gérer la page FAQ</a>
-            </div>
-        </div>
+        <h1><a href="">Gérer la page FAQ</a></h1>
     </div>
 </div>
