@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Le contrôleur :
  * - définit le contenu des variables à afficher
@@ -9,7 +8,9 @@
 /**
  * Contrôleur de l'utilisateur
  */
-
+if (session_status() != 2){
+    session_start();
+}
 // on inclut le fichier modèle contenant les appels à la BDD
 include('./modele/requetes.utilisateurs.php');
 
@@ -26,7 +27,7 @@ if (!isset($_SESSION['connecter']) || empty($_SESSION['connecter']))  {
     $_SESSION['connecter'] = $_SESSION['connecter'];
 }
 
-if (!isset($_SESSION['connecter']) || empty($_SESSION['connecter']))  {
+if (!isset($_SESSION['type']) || empty($_SESSION['type']))  {
     $_SESSION['type'] = 'null';
 }
 
@@ -187,11 +188,7 @@ switch ($function) {
             $title = "Accueil";
             $alerte = false;
             $_SESSION['connecter'] = _CONNEXION;
-            $_SESSION['type'] = 'null';
-            $_SESSION['nom'] = 'null';
-            $_SESSION['prenom'] = 'null';
-            $_SESSION['numero_telephone'] = 'null';
-            $_SESSION['email'] = 'null';
+            session_destroy();
         }
         break;
 
