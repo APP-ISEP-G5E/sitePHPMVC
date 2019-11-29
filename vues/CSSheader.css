@@ -4,6 +4,10 @@
 html {
     width: 100%;
 }
+#vide{
+	height:44px;
+	width:100%;
+}
 /*Modification du header*/
 header {
     width: 100%;
