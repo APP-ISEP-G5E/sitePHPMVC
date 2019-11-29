@@ -1,13 +1,14 @@
+<div id="vide"></div>
 <h1>Nous Contacter</h1>
 <div class="contact">
     <div id="mail">
-        <img src="pictures/mail.png" height="50px" width="auto">
-        <p> Ceci est le mail</p>
+        <img src="pictures/mail.png" height="100px" width="auto">
+        <p> Guillaume.Phillipe@gmail.com</p>
     </div>
 
     <div id="telephone">
-        <img src="pictures/mail.png" height="50px" width="auto">
-        <p> Ceci est le mail</p>
+        <img src="pictures/phone.png" height="100px" width="auto">
+        <p> +33 06 05 04 85</p>
     </div>
 
 </div>
