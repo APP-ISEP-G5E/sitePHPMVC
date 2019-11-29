@@ -167,14 +167,15 @@ switch ($function) {
                         $_SESSION['email'] = $connexion['adresse_mail'];
                         $css = "CSSaccueil";
                         if ($connexion['type'] == 'admin') {
-                            $vue = "accueiladmin";
-                            $title = 'admin';
+                            $vue = "accueilAdmin";
+                            $title = "Accueil Admin";
                         } elseif ($connexion['type'] == 'gestionnaire') {
                             $vue = "accueilGestionnaire";
+                            $title = "Accueil Gestionnaire";
 
                         } elseif ($connexion['type'] == 'client') {
                             $vue = "accueil";
-
+                            $title = "Accueil";
                         }
                     } else {
                         $alerte = "Login ou mot de passe incorrect";
@@ -184,8 +185,8 @@ switch ($function) {
             }
         } else {
             $css="CSSaccueil";
-            $vue = "accueil";
-            $title = "Accueil";
+            $vue = "deconnexion";
+            $title = "Deconnexion";
             $alerte = false;
             $_SESSION['connecter'] = _CONNEXION;
             session_destroy();
