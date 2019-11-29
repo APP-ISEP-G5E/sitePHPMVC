@@ -13,7 +13,8 @@
 // si la fonction n'est pas définie, on choisit d'afficher l'accueil
 if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
     $function = "accueil";
-} else {
+}
+else {
     $function = $_GET['fonction'];
 }
 
@@ -31,12 +32,71 @@ switch ($function) {
         $css="CSSgestionacces";
         $vue="creerCandidat";
         $title="Créer / Supprimer un candidat";
+        // inscription d'un nouvel utilisateur
+        $alerte = false;
+        // Cette partie du code est appelée si le formulaire a été posté
+        if (isset($_POST['username']) and isset($_POST['password'])) {
+            $values = [
+                'username' => $_SESSION['nom'],
+                'password' => $_POST['password']
+            ];
+            $connexion = bddContient($bdd, $values);
+            //on verifie que  le mot de passe de l'admin est correcte
+            if ($connexion['mot_de_passe'] == $_POST['password']){
+                // Tout est ok, on peut inscrire le nouvel utilisateur
+                $values = [
+                    'username' => $_POST['username'],
+                    'password' => chaine_aleatoire(8) // on crypte le mot de passe
+                ];
+
+                // Appel à la BDD à travers une fonction du modèle.
+                $retour = ajouteUtilisateur($bdd, $values);
+
+                if ($retour) {
+                    $alerte = "Inscription réussie";
+                } else {
+                    $alerte = "L'inscription dans la BDD n'a pas fonctionné";
+                }
+            }
+            else {
+                $alerte = "Mot de passe incorrecte";
+            }
+
+
+        }
+        $title = "Inscription";
         break;
 
     case 'gestgestionnaire':
         $css="CSSgestionacces";
         $vue="creerGestionnaire";
         $title="Créer / Supprimer un gestionnaire";
+        // inscription d'un nouvel utilisateur
+        $vue = "inscription";
+        $alerte = false;
+
+        // Cette partie du code est appelée si le formulaire a été posté
+        if (isset($_POST['username']) and isset($_POST['password'])) {
+
+            // Tout est ok, on peut inscrire le nouvel utilisateur
+
+            //
+            $values = [
+                'username' => $_POST['username'],
+                'password' => crypterMdp($_POST['password']) // on crypte le mot de passe
+            ];
+
+            // Appel à la BDD à travers une fonction du modèle.
+            $retour = ajouteUtilisateur($bdd, $values);
+
+            if ($retour) {
+                $alerte = "Inscription réussie";
+            } else {
+                $alerte = "L'inscription dans la BDD n'a pas fonctionné";
+            }
+
+        }
+        $title = "Inscription";
         break;
 
     default:
