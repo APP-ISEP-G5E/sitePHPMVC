@@ -6,10 +6,6 @@ body {
 	background-image: url("../pictures/Pattern_blanc.png");
 }
 /*Style pour les boutons déroulant + déroulant*/
-#vide{
-	height:44px;
-	width:100%;
-}
 /*la classe dans laquelle on va mettre l'ensemble de la structure*/
 .accueil_contenu{
 	background: linear-gradient(217deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 70.71%),
