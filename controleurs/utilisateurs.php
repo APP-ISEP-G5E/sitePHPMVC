@@ -30,6 +30,7 @@ if (!isset($_SESSION['connecter']) || empty($_SESSION['connecter']))  {
 if (!isset($_SESSION['type']) || empty($_SESSION['type']))  {
     $_SESSION['type'] = 'null';
 }
+$alerte=false;
 
 switch ($function) {
 
