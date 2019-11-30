@@ -17,7 +17,7 @@ define("_PROFIL","Mon Profil");
 
 //footer
 define("_NOUS_CONTACTER","Nous contacter");
-define("_CGU","Conditions générales d'utilisations");
+define("_CGU","Conditions générales d'utilisation");
 define("_MENTIONS_LEGALES","Mentions légales");
 
 //accueil admin
