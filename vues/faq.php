@@ -1,3 +1,4 @@
+<div id="vide"></div>
 <h1>FAQ</h1>
 <div id="contenuFaq">
     <div class="blocQuestionReponse">
