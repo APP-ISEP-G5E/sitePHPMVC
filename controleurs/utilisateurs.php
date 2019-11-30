@@ -40,7 +40,7 @@ switch ($function) {
             $vue = "accueil";
             $title = "Accueil";
         } elseif ($_SESSION['type'] == 'gestionnaire'){
-            $css = "CSSaccueil";
+            $css = "CSSnav";
             $vue = "accueilGestionnaire";
             $title = "AccueilGestionnaire";
         } elseif ($_SESSION['type'] == 'admin'){
@@ -170,7 +170,7 @@ switch ($function) {
                             $vue = "accueilAdmin";
                             $title = "Accueil Admin";
                         } elseif ($connexion['type'] == 'gestionnaire') {
-                            $css = "CSSaccueil";
+                            $css = "CSSnav";
                             $vue = "accueilGestionnaire";
                             $title = "Accueil Gestionnaire";
 
