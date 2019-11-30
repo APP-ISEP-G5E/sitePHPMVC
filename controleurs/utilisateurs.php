@@ -108,9 +108,9 @@ switch ($function) {
             $vue = "Profil";
             $title = "Profil";
         } else{
-            $vue = "erreur404";
-            $css = "CSSprofil";
-            $title = "Non connecter";
+            $vue = "connexion";
+            $css = "CSSconnexion";
+            $title = "Connexion";
         }
         break;
 
