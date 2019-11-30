@@ -12,7 +12,7 @@
     <input type="checkbox" id="switch">
     <nav role="navigation">
         <ul>
-            <li><a class="MenuP" href="index.php?cible=utilsateurs&fonction=faq"><?php echo _FAQH; ?></a></li>
+            <li><a class="MenuP" href="index.php?cible=utilisateurs&fonction=faq"><?php echo _FAQH; ?></a></li>
             <li><a class="MenuP" href="index.php?"><?php echo _ACCUEIL; ?></a></li>
             <li><a class="MenuP" href="index.php?cible=utilisateurs&fonction=profil"><?php echo _MON_PROFIL; ?></a></li>
             <li><a class="MenuP" href="index.php?cible=utilisateurs&fonction=connexion"><?php echo $_SESSION['connecter']; ?></a></li>
