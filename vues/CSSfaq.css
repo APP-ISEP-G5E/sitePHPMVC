@@ -34,3 +34,7 @@ body{
 #vide{
     height: 44px;
 }
+.parametrer{
+    display: flex;
+    /*flex-direction: row;   *//*marche pas*/
+}
