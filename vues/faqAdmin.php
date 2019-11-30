@@ -1,6 +1,7 @@
 <div id="vide"></div>
 <!--ajouter une question-->
 <div id="faq">
+    <h1>FAQ</h1>
     <div id="parametrer">
         <form method="POST" action="">
             <div class="label">
@@ -16,7 +17,6 @@
     </div>
 </div>
 <div id="contenuFaq">
-    <h1>FAQ</h1>
     <?php
     foreach ($donneesfaq as $element) { ?>
         <!--bloc questionReponse-->
