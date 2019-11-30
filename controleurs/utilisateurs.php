@@ -194,6 +194,11 @@ switch ($function) {
             session_destroy();
         }
         break;
+        
+    case 'faq':
+        $title="FAQ";
+        $vue="faq";
+        $css="CSSfaq";
 
     default:
         // si aucune fonction ne correspond au paramètre function passé en GET
