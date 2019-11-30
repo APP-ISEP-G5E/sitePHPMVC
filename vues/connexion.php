@@ -16,6 +16,4 @@
 <div id="espace">
 
 </div>
-<?php if($alerte){  ?>
-<?php echo '<SCRIPT language="Javascript">alert(\''.$alerte.'\');</SCRIPT>'; }?>
 
