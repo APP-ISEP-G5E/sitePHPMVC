@@ -1,5 +1,5 @@
 <div id="vide"></div>
-<h1>Mention Légale</h1>
+<h1>Mentions Légales</h1>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ornare quis risus a fermentum. Fusce dolor orci, sollicitudin eu ligula et, mollis finibus lectus. Suspendisse consequat eleifend nisl, rhoncus elementum libero suscipit ac. Pellentesque ut auctor justo. Duis varius condimentum lacus, eu feugiat tellus pellentesque sed. Nam vel bibendum sapien. Aenean id lobortis sem. Cras purus purus, euismod vulputate aliquet ac, ultrices sed ex. Quisque malesuada ex ut pulvinar vulputate.
 
