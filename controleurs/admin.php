@@ -97,12 +97,19 @@ switch ($function) {
         }
         break;
         
-    case "listeUtilisateurs" :
+    case 'listeUtilisateurs' :
             $title="Liste des Utilisateurs";
             $donneesListeUtilisateurs = recupereTous($bdd, "utilisateur");
             $vue= "listeUtilisateurs";
             $css="CSSlisteUtilisateurs";
             break;
+        
+    case 'faq':
+            $title="Modifier FAQ";
+            $vue= "faqAdmin";
+            $css="CSSfaq";
+            break;
+        
         
     default:
         // si aucune fonction ne correspond au paramètre function passé en GET
