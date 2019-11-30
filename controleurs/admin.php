@@ -108,6 +108,8 @@ switch ($function) {
             $title="Modifier FAQ";
             $vue= "faqAdmin";
             $css="CSSfaq";
+            $faq="faq";
+            $donneesfaq = recupereTous($bdd,$faq);
             break;
         
         
