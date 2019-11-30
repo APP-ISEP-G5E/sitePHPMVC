@@ -1,6 +1,7 @@
 <div id="vide" xmlns="http://www.w3.org/1999/html"></div>
 <a href="index.php?cible=admin&fonction=gestcandidat">Gestion candidat</a>
 <a href="index.php?cible=admin&fonction=gestgestionnaire">Gestion gestionnaire</a>
+<a href="index.php?cible=admin&fonction=listeUtilisateurs">Lister utilisateurs</a>
 <div class="box">
     <div class="box1">
         <h1>Alerte : </h1>
