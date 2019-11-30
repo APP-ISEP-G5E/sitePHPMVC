@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `faq` (
   `idQ` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `contenuQuestion` text,
   `contenuReponse` text,
-  PRIMARY KEY (`idQA`)
+  PRIMARY KEY (`idQ`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
