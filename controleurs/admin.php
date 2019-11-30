@@ -19,6 +19,7 @@ if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
 else {
     $function = $_GET['fonction'];
 }
+$alerte=false;
 
 switch ($function) {
 
