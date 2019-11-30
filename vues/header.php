@@ -10,7 +10,7 @@
     <img class="logo" src="pictures/logo-reduit.png" alt="logo" height="44px">
     <label id="burger" for="switch">&#9776;</label>
     <input type="checkbox" id="switch">
-    <nav role="navigation">
+    <nav id="navheader" role="navigation">
         <ul>
             <li><a class="MenuP" href="index.php?cible=utilisateurs&fonction=faq"><?php echo _FAQH; ?></a></li>
             <li><a class="MenuP" href="index.php?"><?php echo _ACCUEIL; ?></a></li>
