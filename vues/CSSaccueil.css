@@ -6,6 +6,11 @@ body {
 	background-image: url("../pictures/Pattern_blanc.png");
 }
 /*Style pour les boutons déroulant + déroulant*/
+#vide{
+	height:44px;
+	width:100%;
+	min-height:44px;
+}
 /*la classe dans laquelle on va mettre l'ensemble de la structure*/
 .accueil_contenu{
 	background: linear-gradient(217deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 70.71%),
@@ -50,45 +55,5 @@ body {
 	color: dimgray;
 	margin-left: 20px;
 	margin-right:  20px;
-}
-
-/*box : englobe la page principale, box1 et box2 prennent respectivement les boutons à gauche et à droite, une box par bouton et box3 est utilisé pour les 2 liens directes*/
-.box {
-	box-sizing: border-box;
-	display: flex;
-	justify-content: space-evenly;
-	width: 100%;
-	padding: 1%;
-	flex-wrap: nowrap;
-}
-
-.box .box1 {
-	display: flex;
-	box-sizing: border-box;
-	width: 50%;
-	justify-content: center;
-	align-items: center;
-	min-width: 250px;
-}
-
-.box .box2 {
-	display: flex;
-	box-sizing: border-box;
-	width: 50%;
-	justify-content: center;
-	align-items: center;
-	min-width: 250px;
-}
-
-p1 {
-	word-spacing: 5px;
-}
-
-h1,h2 {
-	text-align: center;
-}
-
-ul {
-	text-align: left;
 }
 

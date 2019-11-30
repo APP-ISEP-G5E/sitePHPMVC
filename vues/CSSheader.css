@@ -30,6 +30,7 @@ header {
     text-decoration: none;
 
 }
+
 .MenuP2 {
     font-weight: bold;
     font-size: 106.25%;
@@ -79,11 +80,11 @@ header ul {
         margin-right: 5px;
     }
 
-    #switch:checked + nav {
+    #switch:checked + #navheader {
         display: block;
     }
 
-    nav {
+    #navheader {
         width: 100%;
         display: none;
         clear: both;
@@ -92,7 +93,6 @@ header ul {
     header ul {
         width: 100%;
         background-color: lightblue;
-
     }
 
     header li {
