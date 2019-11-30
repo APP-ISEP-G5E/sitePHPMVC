@@ -3,6 +3,7 @@ body{
     height:100%;
     width:100%;
     margin:0 0;
+    background-image: url("../pictures/Pattern_blanc.png");
 }
 #vide{
     height:44px;
