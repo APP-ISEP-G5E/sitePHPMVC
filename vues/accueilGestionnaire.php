@@ -1,40 +1,29 @@
-<div class="box">
-    <div class="box1">
-        <div class="dropdown">
-            <button onclick="Alertebtn()" class="dropbtn">Alerte</button>
-            <div id="alerteDropdown" class="dropdown-content">
-                <ul>
-                    <div class ="borderbox"><a href="">Alerte capteur température</a></div>
-                    <div class ="borderbox"><a href="">Alerte capteur rythme cardiaque</a></div>
-                    <div class ="borderbox"><a href="">Alerte capteur sonore</a></div>
-                </ul>
-            </div>
-        </div>
-    </div>
+<div id="vide">
 
-    <div class="box2">
-        <div class="dropdown">
-            <div class="box3">
-                <a href="">Données des candidats anonymes</a>
-            </div>
-        </div>
-    </div>
 </div>
-
-<div class="box">
-    <div class="box1">
-        <div class="dropdown">
-            <button onclick="Capteurbtn()" class="dropbtn">Modifier les seuils des capteurs</button>
-            <div id="capteurDropdown" class="dropdown-content">
-                <ul>
-                    <div class ="borderbox"><a href="">Modifier les seuils du capteur de température</a></div>
-                    <div class ="borderbox"><a href="">Modifier les seuils du capteur rythme cardiaque</a></div>
-                    <div class ="borderbox"><a href="">Modifier les seuils du capteur sonore</a></div>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="box2">
-    </div>
-</div>
+<nav id="naviguation">
+    <div id="margin"></div>
+    <h3 class="titre"><span class="ruban">ALERTE</span></h3>
+    <ul>
+        <li><a class="sous-titre" href="#">Alerte capteur température</a></li>
+        <div class=""></div>
+        <li><a class="sous-titre" href="#">Alerte capteur rythme cardiaque</a></li>
+        <div></div>
+        <li><a class="sous-titre" href="#">Alerte capteur sonore</a></li>
+        <div></div>
+    </ul>
+    <h3 class="titre"><span class="ruban">GESTION CAPTEURS</span></h3>
+    <ul>
+        <li><a class="sous-titre" href="#">Modifier les seuils</a></li>
+        <li><a class="sous-titre" href="#">Ajouter un capteur</a></li>
+        <li><a class="sous-titre" href="#">Enlever un capteur</a></li>
+    </ul>
+    <h3 class="titre"><a href=""><span class="ruban">RESULTATS CANDIDATS</span></a></h3>
+    <h3 class="titre"><span class="ruban">GESTION ACTIONNEURS</span></h3>
+    <ul>
+        <li><a class="sous-titre" href="#">Modifier les seuils</a></li>
+        <li><a class="sous-titre" href="#">Ajouter un Actionneur</a></li>
+        <li><a class="sous-titre" href="#">Enlever un Actionneur</a></li>
+    </ul>
+    <div id="margin"></div>
+</nav>
