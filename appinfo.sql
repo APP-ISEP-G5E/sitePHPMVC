@@ -108,8 +108,8 @@ INSERT INTO `carte` (`idCarte`) VALUES
 DROP TABLE IF EXISTS `faq`;
 CREATE TABLE IF NOT EXISTS `faq` (
   `idQA` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `type` varchar(45) NOT NULL,
-  `contenu` text NOT NULL,
+  `contenuQuestion` text,
+  `contenuReponse` text,
   PRIMARY KEY (`idQA`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
@@ -117,9 +117,9 @@ CREATE TABLE IF NOT EXISTS `faq` (
 -- Déchargement des données de la table `faq`
 --
 
-INSERT INTO `faq` (`idQA`, `type`, `contenu`) VALUES
-(1, 'question', 'Comment on crée un compte ?'),
-(2, 'answer', 'Il faut s\'inscrire dans un centre de test psychométrique qui utilise ce logiciel.');
+INSERT INTO `faq` (`idQA`, `contenuQuestion`, `contenuReponse`) VALUES
+(1,'Comment on crée un compte ?','Il faut s\'inscrire dans un centre de test psychométrique qui utilise ce logiciel.'),
+(2, 'Combien de temps faut-il attendre pour obtenir ses résultats ?','Cela dépend de votre centre de test, mais il faut en générale attendre une à deux semaines.' );
 
 -- --------------------------------------------------------
 
