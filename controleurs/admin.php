@@ -9,6 +9,8 @@
 /**
  * Contrôleur de l'admin
  */
+// on appelle le modèle qui fait appel aux requetes génériques
+include('./modele/requetes.generiques.php');
 
 // si la fonction n'est pas définie, on choisit d'afficher l'accueil
 if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
@@ -94,7 +96,14 @@ switch ($function) {
             }
         }
         break;
-
+        
+    case "listeUtilisateurs" :
+            $title="Liste des Utilisateurs";
+            $donneesListeUtilisateurs = recupereTous($bdd, "utilisateur");
+            $vue= "listeUtilisateurs";
+            $css="CSSlisteUtilisateurs";
+            break;
+        
     default:
         // si aucune fonction ne correspond au paramètre function passé en GET
         $vue = "erreur404";
