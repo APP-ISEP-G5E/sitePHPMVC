@@ -107,7 +107,7 @@ INSERT INTO `carte` (`idCarte`) VALUES
 
 DROP TABLE IF EXISTS `faq`;
 CREATE TABLE IF NOT EXISTS `faq` (
-  `idQA` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `idQ` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `contenuQuestion` text,
   `contenuReponse` text,
   PRIMARY KEY (`idQA`)
@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `faq` (
 -- Déchargement des données de la table `faq`
 --
 
-INSERT INTO `faq` (`idQA`, `contenuQuestion`, `contenuReponse`) VALUES
+INSERT INTO `faq` (`idQ`, `contenuQuestion`, `contenuReponse`) VALUES
 (1,'Comment on crée un compte ?','Il faut s\'inscrire dans un centre de test psychométrique qui utilise ce logiciel.'),
 (2, 'Combien de temps faut-il attendre pour obtenir ses résultats ?','Cela dépend de votre centre de test, mais il faut en générale attendre une à deux semaines.' );
 
