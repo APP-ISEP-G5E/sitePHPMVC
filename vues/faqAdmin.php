@@ -14,8 +14,6 @@
         </div>
     <?php } ?>
 </div>
-<?php if($alerte){  ?>
-    <?php echo '<SCRIPT language="Javascript">alert(\''.$alerte.'\');</SCRIPT>'; }?>
 <!--ajouter une question-->
 <div id="faq">
     <div id="parametrer">
