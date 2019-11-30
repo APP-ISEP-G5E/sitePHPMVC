@@ -199,7 +199,7 @@ switch ($function) {
         $title="FAQ";
         $vue="faq";
         $css="CSSfaq";
-        $donneesfaq = recupereTous($bdd,"faq")
+        $donneesfaq = recupereTous($bdd,"faq");
         break;
 
     default:
