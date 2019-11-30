@@ -1,3 +1,3 @@
-<p>Page demandée inexistante</p>
+<p id="erreur">Page demandée inexistante</p>
 
 
