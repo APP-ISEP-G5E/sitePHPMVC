@@ -186,7 +186,7 @@ switch ($function) {
 
             }
         } else {
-            $css="CSSaccueil";
+            $css="CSSconnexion";
             $vue = "deconnexion";
             $title = "Deconnexion";
             $alerte = false;
