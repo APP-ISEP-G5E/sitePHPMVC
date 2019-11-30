@@ -22,9 +22,9 @@ switch ($function) {
 
     case 'accueil':
         //affichage de l'accueil
-        $css="CSSaccueil";
-        $vue = "accueilAdmin";
-        $title = "Accueil Admin";
+        $css="CSSnav";
+        $vue = "accueilGestionnaire";
+        $title = "Accueil Gestionnaire";
         break;
 
     default:
