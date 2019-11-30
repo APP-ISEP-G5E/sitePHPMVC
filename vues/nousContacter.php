@@ -3,12 +3,12 @@
 <div class="contact">
     <div id="mail">
         <img src="pictures/mail.png" height="100px" width="auto">
-        <p> Guillaume.Phillipe@gmail.com</p>
+        <p>admin@infinitemeasures.com</p>
     </div>
 
     <div id="telephone">
         <img src="pictures/phone.png" height="100px" width="auto">
-        <p> +33 06 05 04 85</p>
+        <p> +336 00 00 00 00</p>
     </div>
 
 </div>
