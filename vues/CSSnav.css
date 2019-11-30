@@ -50,6 +50,7 @@ body{
     padding: 8px 5px 10px 20px;
     font-family: "Helvetica Neue","Helvetica","Arial",sans-serif;
     font-weight:bold;
+
 }
 .sous-titre{
     font-weight:normal;
@@ -59,4 +60,8 @@ body{
 #margin{
     heigth:20px;
     width:100%;
+}
+nav a{
+    text-decoration:none;
+    color:black;
 }

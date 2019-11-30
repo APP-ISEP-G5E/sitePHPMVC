@@ -24,13 +24,14 @@
         <li><a class="sous-titre" href="#">Ajouter un capteur</a></li>
         <li><a class="sous-titre" href="#">Enlever un capteur</a></li>
     </ul>
-    <h3 class="titre" href=""><span class="ruban">RESULTATS CANDIDATS</span></h3>
+    <h3 class="titre"><a href=""><span class="ruban">RESULTATS CANDIDATS</span></a></h3>
     <h3 class="titre"><span class="ruban">GESTION ACTIONNEURS</span></h3>
     <ul>
         <li><a class="sous-titre" href="#">Modifier les seuils</a></li>
         <li><a class="sous-titre" href="#">Ajouter un Actionneur</a></li>
         <li><a class="sous-titre" href="#">Enlever un Actionneur</a></li>
     </ul>
-    <h3 class="titre"><span class="ruban">GERER LA FAQ</span></h3>
+    <h3 class="titre"><a href=""><span class="ruban">GERER LA FAQ</span></a></h3>
+    <h3 class="titre"><a href="index.php?cible=admin&fonction=listeUtilisateurs"><span class="ruban">LISTER UTILISATEURS (temp)</span></a></h3>
     <div id="margin"></div>
 </nav>
