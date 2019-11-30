@@ -199,6 +199,7 @@ switch ($function) {
         $title="FAQ";
         $vue="faq";
         $css="CSSfaq";
+        break;
 
     default:
         // si aucune fonction ne correspond au paramètre function passé en GET
