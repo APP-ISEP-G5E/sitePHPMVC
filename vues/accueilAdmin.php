@@ -31,7 +31,7 @@
         <li><a class="sous-titre" href="#">Ajouter un Actionneur</a></li>
         <li><a class="sous-titre" href="#">Enlever un Actionneur</a></li>
     </ul>
-    <h3 class="titre"><a href=""><span class="ruban">GERER LA FAQ</span></a></h3>
+    <h3 class="titre"><a href="index.php?cible=admin&fonction=faq"><span class="ruban">GERER LA FAQ</span></a></h3>
     <h3 class="titre"><a href="index.php?cible=admin&fonction=listeUtilisateurs"><span class="ruban">LISTER UTILISATEURS (temp)</span></a></h3>
     <div id="margin"></div>
 </nav>
