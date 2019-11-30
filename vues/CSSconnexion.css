@@ -1,3 +1,5 @@
+/* page de connexion*/
+
 input[type=text],input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -39,7 +41,6 @@ body{
     justify-content: center;
     align-items: center;
     background-image: url("../pictures/Pattern_blanc.png");
-
 }
 #connexion {
     display:flex;
@@ -60,7 +61,24 @@ body{
 #espace {
     height:200px;
 }
-p{
-    color:red;
-    text-align: center;
+
+/* page de deconnexion */
+#vide{
+    height:44px;
+    width:100%;
 }
+.marginDeco{
+    height:100%;
+    width:100%;
+    display:block;
+    position:fixed;
+    margin-top:15%;
+}
+.deconnexion {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50%;
+    color: #0066CC;
+}
+
