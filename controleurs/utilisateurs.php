@@ -44,7 +44,7 @@ switch ($function) {
             $vue = "accueilGestionnaire";
             $title = "AccueilGestionnaire";
         } elseif ($_SESSION['type'] == 'admin'){
-            $css = "CSSaccueil";
+            $css = "CSSnav";
             $vue = "accueilAdmin";
             $title = "AccueilAdmin";
         }
@@ -165,15 +165,17 @@ switch ($function) {
                         $_SESSION['prenom'] = $connexion['prenom'];
                         $_SESSION['numero_telephone'] = $connexion['numero_telephone'];
                         $_SESSION['email'] = $connexion['adresse_mail'];
-                        $css = "CSSaccueil";
                         if ($connexion['type'] == 'admin') {
+                            $css = "CSSnav";
                             $vue = "accueilAdmin";
                             $title = "Accueil Admin";
                         } elseif ($connexion['type'] == 'gestionnaire') {
+                            $css = "CSSaccueil";
                             $vue = "accueilGestionnaire";
                             $title = "Accueil Gestionnaire";
 
                         } elseif ($connexion['type'] == 'client') {
+                            $css = "CSSaccueil";
                             $vue = "accueil";
                             $title = "Accueil";
                         }
