@@ -63,4 +63,10 @@ function typeUtilisateur(PDO $bdd, array $utilisateur) {
 
 }
 
+function modifierReponse(PDO $bdd, $numeroQuestion,$reponse)
+{
+    $reqr = $bdd->prepare('UPDATE faq SET contenuReponse = :reponse WHERE (idQ = :idQ)');
+    $reqr->execute(array(':idQ'=> $numeroQuestion ,':reponse' => $reponse));
+}
+
 ?>
