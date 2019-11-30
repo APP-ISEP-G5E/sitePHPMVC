@@ -1,27 +1,18 @@
 <div id="vide"></div>
-<h1>FAQ</h1>
 <div id="contenuFaq">
-    <div class="blocQuestionReponse">
+    <h1>FAQ</h1>
     <?php
-
     foreach ($donneesfaq as $element) { ?>
-        <?php
-        if ($element['contenuReponse'] == null && $element['contenuQuestion'] != null) {  /*s'il n'y a pas de contenuReponse mais un contenuQuestion*/
-            ?>
-
+        <!--bloc questionReponse-->
+        <div class="blocQuestionReponse">
             <div class="blocQuestion">
-                <?php echo $element['idQ'] .'. ' . $element['contenuQuestion']; ?>
+                <?php echo $element['contenuQuestion']; ?>
             </div>
-        <?php } elseif ($element['contenuReponse'] != null && $element['contenuQuestion'] == null) { ?>
             <div class="blocReponse">
-                <?php echo '- ' . $element['contenuReponse']; ?>
+                <?php echo $element['contenuReponse']; ?>
             </div>
-
-
-        <?php } ?>
-
+        </div>
     <?php } ?>
-            </div>  <!--bloc questionReponse-->
 </div>
 
 
