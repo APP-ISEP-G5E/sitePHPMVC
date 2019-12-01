@@ -33,4 +33,20 @@ function bddContient(PDO $bdd, array $utilisateur) {
     return $query->fetch();
 }
 
+function ajouteQuestion(PDO $bdd, $question)
+{
+    $recupereMax = $bdd->query('SELECT MAX(idQ) as max FROM faq');
+    $idQMax = $recupereMax->fetch();      //fetch() renvoie la première ligne récupérée sous un array
+    ++$idQMax['max'];     //'max' vient de 'as max' dans la requete recupereMax, (le AUTO_INCREMENT de MySQL bug si fait supprime des questions au milieu)
+    //$recupereMax->closeCursor();
+    $reqq = $bdd->prepare('INSERT INTO faq(idQ,contenuQuestion) VALUES(:idQNext,:question)');
+    $reqq->execute(array(':idQNext'=> $idQMax['max'] ,':question' => $question));
+}
+
+function modifierReponse(PDO $bdd, $numeroQuestion,$reponse)
+{
+    $reqr = $bdd->prepare('UPDATE faq SET contenuReponse = :reponse WHERE (idQ = :idQ)');
+    $reqr->execute(array(':idQ'=> $numeroQuestion ,':reponse' => $reponse));
+}
+
 ?>
