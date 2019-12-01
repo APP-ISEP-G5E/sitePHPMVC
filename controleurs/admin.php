@@ -37,34 +37,75 @@ switch ($function) {
         // inscription d'un nouvel utilisateur
         $alerte = false;
         // Cette partie du code est appelée si le formulaire a été posté
-        if (isset($_POST['username']) and isset($_POST['password'])) {
+        if (isset($_POST['verif_mdp'])) {
             $values = [
-                'username' => $_SESSION['nom'],
-                'password' => $_POST['password']
+                'username' => $_SESSION['login'],
             ];
-            $connexion = bddContient($bdd, $values);
+            $connexion = bddPassword($bdd, $values);
             //on verifie que  le mot de passe de l'admin est correcte
-            if ($connexion['mot_de_passe'] == $_POST['password']){
-                // Tout est ok, on peut inscrire le nouvel utilisateur
-                $values = [
-                    'username' => $_POST['username'],
-                    'password' => chaine_aleatoire(8) // on crypte le mot de passe
-                ];
+            if ($connexion['mot_de_passe'] == $_POST['verif_mdp']) {
+                if (isset($_POST['new_user']) and isset($_POST['new_email'])) {
+                    //Pour ajouter un candidat
+                    $values = [
+                        'username' => $_POST['new_user'],
+                    ];
+                    $existe=existantUtilisateur($bdd,$values);
+                    if (!empty($existe)){
+                        $alerte="Le login est deja existant";
+                    }
+                    elseif ($_POST['new_user'] == "" or $_POST['new_email'] == "") {
+                        $alerte = "Aucune saisie";
+                    }
+                    else {
+                        // Tout est ok, on peut inscrire le nouveau candidat
+                        $values = [
+                            'type' => 'candidat',
+                            'username' => $_POST['new_user'],
+                            'password' => chaine_aleatoire(8), // on genere un mot de passe aleatoire
+                            'email' => $_POST['new_email']
+                        ];
 
-                // Appel à la BDD à travers une fonction du modèle.
-                $retour = ajouteUtilisateur($bdd, $values);
+                        // Appel à la BDD à travers une fonction du modèle.
+                        $retour = ajouteUtilisateur($bdd, $values);
+                        if ($retour) {
+                            $alerte = "Inscription réussie";
+                        } else {
+                            $alerte = "L'inscription dans la BDD n'a pas fonctionné";
+                        }
+                    }
+                }
+                //Pour supprimer un candidat
+                if (isset($_POST['sup_user']) and isset($_POST['sup_email'])) {
+                    $values = [
+                        'username' => $_POST['sup_user'],
+                    ];
+                    $existe=existantUtilisateur($bdd,$values);
+                    if (empty($existe)){
+                        $alerte="Le login n'existe pas";
+                    }
+                    elseif ($_POST['sup_user'] == "" or $_POST['sup_email'] == "") {
+                        $alerte = "Aucune saisie";
+                    } else {
+                        // Tout est ok, on peut supprimer le candidat
+                        $values = [
+                            'type' => 'candidat',
+                            'username' => $_POST['sup_user'],
+                            'email' => $_POST['sup_email']
+                        ];
 
-                if ($retour) {
-                    $alerte = "Inscription réussie";
-                } else {
-                    $alerte = "L'inscription dans la BDD n'a pas fonctionné";
+                        // Appel à la BDD à travers une fonction du modèle.
+                        $retour = supprimerUtilisateur($bdd, $values);
+                        if ($retour) {
+                            $alerte = "Suppression réussie";
+                        } else {
+                            $alerte = "La suppression dans la BDD n'a pas fonctionné";
+                        }
+                    }
                 }
             }
             else {
                 $alerte = "Mot de passe incorrecte";
             }
-
-
         }
         break;
 
@@ -74,25 +115,75 @@ switch ($function) {
         $title="Créer / Supprimer un gestionnaire";
         // inscription d'un nouvel utilisateur
         $alerte = false;
-
         // Cette partie du code est appelée si le formulaire a été posté
-        if (isset($_POST['username']) and isset($_POST['password'])) {
-
-            // Tout est ok, on peut inscrire le nouvel utilisateur
-
-            //
+        if (isset($_POST['verif_mdp'])) {
             $values = [
-                'username' => $_POST['username'],
-                'password' => crypterMdp($_POST['password']) // on crypte le mot de passe
+                'username' => $_SESSION['login'],
             ];
+            $connexion = bddPassword($bdd, $values);
+            //on verifie que  le mot de passe de l'admin est correcte
+            if ($connexion['mot_de_passe'] == $_POST['verif_mdp']) {
+                if (isset($_POST['new_user']) and isset($_POST['new_email'])) {
+                    //Pour ajouter un gestionnaire
+                    $values = [
+                        'username' => $_POST['new_user'],
+                    ];
+                    $existe=existantUtilisateur($bdd,$values);
+                    if (!empty($existe)){
+                        $alerte="Le login est deja existant";
+                    }
+                    elseif ($_POST['new_user'] == "" or $_POST['new_email'] == "") {
+                        $alerte = "Aucune saisie";
+                    }
+                    else {
+                        // Tout est ok, on peut inscrire le nouveau gestionnaire
+                        $values = [
+                            'type' => 'gestionnaire',
+                            'username' => $_POST['new_user'],
+                            'password' => chaine_aleatoire(8),  // on genere un mot de passe aleatoire
+                            'email' => $_POST['new_email']
+                        ];
 
-            // Appel à la BDD à travers une fonction du modèle.
-            $retour = ajouteUtilisateur($bdd, $values);
+                        // Appel à la BDD à travers une fonction du modèle.
+                        $retour = ajouteUtilisateur($bdd, $values);
+                        if ($retour) {
+                            $alerte = "Inscription réussie";
+                        } else {
+                            $alerte = "L'inscription dans la BDD n'a pas fonctionné";
+                        }
+                    }
+                }
+                //Pour supprimer un gestionnaire
+                if (isset($_POST['sup_user']) and isset($_POST['sup_email'])) {
+                    $values = [
+                        'username' => $_POST['sup_user'],
+                    ];
+                    $existe=existantUtilisateur($bdd,$values);
+                    if (empty($existe)){
+                        $alerte="Le login n'existe pas";
+                    }
+                    elseif ($_POST['sup_user'] == "" or $_POST['sup_email'] == "") {
+                        $alerte = "Aucune saisie";
+                    } else {
+                        // Tout est ok, on peut supprimer le gestionnaire
+                        $values = [
+                            'type' => 'gestionnaire',
+                            'username' => $_POST['sup_user'],
+                            'email' => $_POST['sup_email']
+                        ];
 
-            if ($retour) {
-                $alerte = "Inscription réussie";
-            } else {
-                $alerte = "L'inscription dans la BDD n'a pas fonctionné";
+                        // Appel à la BDD à travers une fonction du modèle.
+                        $retour = supprimerUtilisateur($bdd, $values);
+                        if ($retour) {
+                            $alerte = "Suppression réussie";
+                        } else {
+                            $alerte = "La suppression dans la BDD n'a pas fonctionné";
+                        }
+                    }
+                }
+            }
+            else {
+                $alerte = "Mot de passe incorrecte";
             }
         }
         break;

@@ -88,19 +88,6 @@ switch ($function) {
         $title = "Inscription";
         break;
 
-    case 'liste':
-        // Liste des utilisateurs déjà enregistrés
-        $vue = "liste";
-        $title = "Liste des utilisateurs inscrits";
-        $entete = "Voici la liste :";
-
-        $liste = recupereTousUtilisateurs($bdd);
-
-        if (empty($liste)) {
-            $alerte = "Aucun utilisateur inscrit pour le moment";
-        }
-
-        break;
 
     case 'profil':
         if ($_SESSION['connecter'] == _DECONNEXION) {
@@ -208,9 +195,9 @@ switch ($function) {
     default:
         // si aucune fonction ne correspond au paramètre function passé en GET
         $vue = "erreur404";
+        $css ="CSSerreur";
         $title = "error404";
         $message = "Erreur 404 : la page recherchée n'existe pas.";
-        $css = "CSSerreur";
 }
 
 include('vues/header.php');
