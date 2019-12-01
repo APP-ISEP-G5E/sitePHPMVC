@@ -19,10 +19,12 @@ return $bdd->query($query)->fetchAll();
  */
 function ajouteUtilisateur(PDO $bdd, array $utilisateur) {
 
-    $query = ' INSERT INTO utilisateur (username, password) VALUES (:username, :password)';
+    $query = ' INSERT INTO utilisateur (type, login, mot_de_passe,adresse_mail) VALUES (:type, :username, :password, :email)';
     $donnees = $bdd->prepare($query);
+    $donnees->bindParam(":type", $utilisateur['type'], PDO::PARAM_STR);
     $donnees->bindParam(":username", $utilisateur['username'], PDO::PARAM_STR);
     $donnees->bindParam(":password", $utilisateur['password']);
+    $donnees->bindParam(":email", $utilisateur['email'], PDO::PARAM_STR);
     return $donnees->execute();
 }
 
@@ -39,3 +41,43 @@ function ajouterQuestionReponse(PDO $bdd, array $question)
     return $donnees->execute();
 
 }
+
+/**
+ * Vérifie si l'utilisateur existe dans la BDD
+ * @param array $utilisateur
+ */
+function bddPassword(PDO $bdd, array $utilisateur) {
+    $query=$bdd->prepare('SELECT mot_de_passe,type FROM utilisateur WHERE login = :pseudo');
+    $query->bindValue(':pseudo',$utilisateur['username'], PDO::PARAM_STR);
+    $query->execute();
+    return $query->fetch();
+}
+
+/**
+ * Ajoute un nouvel utilisateur dans la base de données
+ * @param array $utilisateur
+ */
+function supprimerUtilisateur(PDO $bdd, array $utilisateur) {
+
+    $query = ' DELETE FROM utilisateur WHERE login=:username AND adresse_mail=:email AND type=:type';
+    $donnees = $bdd->prepare($query);
+    $donnees->bindParam(":type", $utilisateur['type'], PDO::PARAM_STR);
+    $donnees->bindParam(":username", $utilisateur['username'], PDO::PARAM_STR);
+    $donnees->bindParam(":email", $utilisateur['email'], PDO::PARAM_STR);
+    return $donnees->execute();
+}
+
+/**
+ * Verifie si le login existe deja dans la BDD
+ * @param array $utilisateur
+ */
+function existantUtilisateur(PDO $bdd, array $utilisateur) {
+
+    $query=$bdd->prepare('SELECT adresse_mail FROM utilisateur WHERE login = :pseudo');
+    $query->bindValue(':pseudo',$utilisateur['username'], PDO::PARAM_STR);
+    $query->execute();
+    return $query->fetch();
+
+}
+
+?>
