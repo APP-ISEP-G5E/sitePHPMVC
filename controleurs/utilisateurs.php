@@ -166,6 +166,7 @@ switch ($function) {
                         $_SESSION['prenom'] = $connexion['prenom'];
                         $_SESSION['numero_telephone'] = $connexion['numero_telephone'];
                         $_SESSION['email'] = $connexion['adresse_mail'];
+                        $_SESSION['login'] = $connexion['login'];
                         if ($connexion['type'] == 'admin') {
                             $css = "CSSnav";
                             $vue = "accueilAdmin";
