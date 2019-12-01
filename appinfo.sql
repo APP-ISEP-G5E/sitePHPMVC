@@ -187,10 +187,10 @@ CREATE TABLE IF NOT EXISTS `test` (
 DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(255) NOT NULL,
-  `prenom` varchar(255) NOT NULL,
-  `date_naissance` date NOT NULL,
-  `numero_telephone` varchar(10) NOT NULL,
+  `nom` varchar(255),
+  `prenom` varchar(255),
+  `date_naissance` date,
+  `numero_telephone` varchar(10),
   `type` varchar(255) NOT NULL,
   `login` varchar(255) NOT NULL,
   `mot_de_passe` varchar(2000) NOT NULL,
