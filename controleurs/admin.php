@@ -34,7 +34,7 @@ switch ($function) {
         $css="CSSgestionacces";
         $vue="creerCandidat";
         $title="Créer / Supprimer un candidat";
-        // inscription d'un nouvel utilisateur
+        // inscription ou suppresion d'un utilisateur
         $alerte = false;
         // Cette partie du code est appelée si le formulaire a été posté
         if (isset($_POST['verif_mdp'])) {
@@ -44,15 +44,17 @@ switch ($function) {
             $connexion = bddPassword($bdd, $values);
             //on verifie que  le mot de passe de l'admin est correcte
             if ($connexion['mot_de_passe'] == $_POST['verif_mdp']) {
+                //Pour ajouter un candidat
                 if (isset($_POST['new_user']) and isset($_POST['new_email'])) {
-                    //Pour ajouter un candidat
                     $values = [
                         'username' => $_POST['new_user'],
                     ];
+                    //on verifie si l'utilisateur existe
                     $existe=existantUtilisateur($bdd,$values);
                     if (!empty($existe)){
                         $alerte="Le login est deja existant";
                     }
+                    //on verifie si il y a bien une saisie
                     elseif ($_POST['new_user'] == "" or $_POST['new_email'] == "") {
                         $alerte = "Aucune saisie";
                     }
@@ -80,9 +82,11 @@ switch ($function) {
                         'username' => $_POST['sup_user'],
                     ];
                     $existe=existantUtilisateur($bdd,$values);
+                    //on verifie si le login existe dans la bdd
                     if (empty($existe)){
                         $alerte="Le login n'existe pas";
                     }
+                    //on verifie si il y a bien une saisie
                     elseif ($_POST['sup_user'] == "" or $_POST['sup_email'] == "") {
                         $alerte = "Aucune saisie";
                     } else {
