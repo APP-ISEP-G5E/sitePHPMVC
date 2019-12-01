@@ -107,10 +107,10 @@ INSERT INTO `carte` (`idCarte`) VALUES
 
 DROP TABLE IF EXISTS `faq`;
 CREATE TABLE IF NOT EXISTS `faq` (
-  `idQ` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `idQA` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `contenuQuestion` text,
   `contenuReponse` text,
-  PRIMARY KEY (`idQ`)
+  PRIMARY KEY (`idQA`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
