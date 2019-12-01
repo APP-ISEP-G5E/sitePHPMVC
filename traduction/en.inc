@@ -85,5 +85,6 @@ define("_SAISIR_MDP","Saisir votre mot de passe pour valider");
 define("_SAISIR_CANDIDAT","Saisir l'adresse mail du candidat");
 define("_SAISIR_GESTIONNAIRE","Saisir l'adresse mail du gestionnaire");
 
-
+define("_SAISIR_CAND","Saisir le nom d'utilisateur du nouveau candidat");
+define("_SAISIR_GEST","Saisir le nom d'utilisateur du nouveau gestionnaire");
 ?>
