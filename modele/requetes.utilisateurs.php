@@ -27,7 +27,7 @@ function rechercheParNom(PDO $bdd, string $nom): array {
  * @param array $utilisateur
  */
 function bddContient(PDO $bdd, array $utilisateur) {
-    $query=$bdd->prepare('SELECT nom,prenom,adresse_mail,numero_telephone,login,mot_de_passe,type FROM utilisateur WHERE login = :pseudo');
+    $query=$bdd->prepare('SELECT nom,prenom,adresse_mail,numero_telephone,login,id,mot_de_passe,type FROM utilisateur WHERE login = :pseudo');
     $query->bindValue(':pseudo',$utilisateur['username'], PDO::PARAM_STR);
     $query->execute();
     return $query->fetch();
