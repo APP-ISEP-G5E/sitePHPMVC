@@ -43,11 +43,11 @@ switch ($function) {
             ];
             $connexion = bddPassword($bdd, $values);
             //on verifie que  le mot de passe de l'admin est correcte
-            if ($connexion['mot_de_passe'] == $_POST['verif_mdp']) {
+            if ($connexion['mot_de_passe'] == htmlspecialchars($_POST['verif_mdp'])) {
                 //Pour ajouter un candidat
                 if (isset($_POST['new_user']) and isset($_POST['new_email'])) {
                     $values = [
-                        'username' => $_POST['new_user'],
+                        'username' => htmlspecialchars($_POST['new_user'])
                     ];
                     //on verifie si l'utilisateur existe
                     $existe=existantUtilisateur($bdd,$values);
@@ -62,9 +62,9 @@ switch ($function) {
                         // Tout est ok, on peut inscrire le nouveau candidat
                         $values = [
                             'type' => 'candidat',
-                            'username' => $_POST['new_user'],
+                            'username' => htmlspecialchars($_POST['new_user']),
                             'password' => chaine_aleatoire(8), // on genere un mot de passe aleatoire
-                            'email' => $_POST['new_email']
+                            'email' => htmlspecialchars($_POST['new_email'])
                         ];
 
                         // Appel à la BDD à travers une fonction du modèle.
@@ -79,7 +79,7 @@ switch ($function) {
                 //Pour supprimer un candidat
                 if (isset($_POST['sup_user']) and isset($_POST['sup_email'])) {
                     $values = [
-                        'username' => $_POST['sup_user'],
+                        'username' => htmlspecialchars($_POST['sup_user'])
                     ];
                     $existe=existantUtilisateur($bdd,$values);
                     //on verifie si le login existe dans la bdd
@@ -93,8 +93,8 @@ switch ($function) {
                         // Tout est ok, on peut supprimer le candidat
                         $values = [
                             'type' => 'candidat',
-                            'username' => $_POST['sup_user'],
-                            'email' => $_POST['sup_email']
+                            'username' => htmlspecialchars($_POST['sup_user']),
+                            'email' => htmlspecialchars($_POST['sup_email'])
                         ];
 
                         // Appel à la BDD à travers une fonction du modèle.
@@ -126,11 +126,11 @@ switch ($function) {
             ];
             $connexion = bddPassword($bdd, $values);
             //on verifie que  le mot de passe de l'admin est correcte
-            if ($connexion['mot_de_passe'] == $_POST['verif_mdp']) {
+            if ($connexion['mot_de_passe'] == htmlspecialchars($_POST['verif_mdp'])) {
                 if (isset($_POST['new_user']) and isset($_POST['new_email'])) {
                     //Pour ajouter un gestionnaire
                     $values = [
-                        'username' => $_POST['new_user'],
+                        'username' => htmlspecialchars($_POST['new_user'])
                     ];
                     $existe=existantUtilisateur($bdd,$values);
                     if (!empty($existe)){
@@ -143,9 +143,9 @@ switch ($function) {
                         // Tout est ok, on peut inscrire le nouveau gestionnaire
                         $values = [
                             'type' => 'gestionnaire',
-                            'username' => $_POST['new_user'],
+                            'username' => htmlspecialchars($_POST['new_user']),
                             'password' => chaine_aleatoire(8),  // on genere un mot de passe aleatoire
-                            'email' => $_POST['new_email']
+                            'email' => htmlspecialchars($_POST['new_email'])
                         ];
 
                         // Appel à la BDD à travers une fonction du modèle.
@@ -160,7 +160,7 @@ switch ($function) {
                 //Pour supprimer un gestionnaire
                 if (isset($_POST['sup_user']) and isset($_POST['sup_email'])) {
                     $values = [
-                        'username' => $_POST['sup_user'],
+                        'username' => htmlspecialchars($_POST['sup_user'])
                     ];
                     $existe=existantUtilisateur($bdd,$values);
                     if (empty($existe)){
@@ -172,8 +172,8 @@ switch ($function) {
                         // Tout est ok, on peut supprimer le gestionnaire
                         $values = [
                             'type' => 'gestionnaire',
-                            'username' => $_POST['sup_user'],
-                            'email' => $_POST['sup_email']
+                            'username' => htmlspecialchars($_POST['sup_user']),
+                            'email' => htmlspecialchars($_POST['sup_email'])
                         ];
 
                         // Appel à la BDD à travers une fonction du modèle.
