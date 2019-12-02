@@ -123,6 +123,7 @@ switch ($function) {
                         $_SESSION['numero_telephone'] = $connexion['numero_telephone'];
                         $_SESSION['email'] = $connexion['adresse_mail'];
                         $_SESSION['login'] = $connexion['login'];
+                        $_SESSION['id'] = $connexion['id'];
                         if ($connexion['type'] == 'admin') {
                             $css = "CSSnav";
                             $vue = "accueilAdmin";
@@ -198,6 +199,7 @@ switch ($function) {
                         $_SESSION['numero_telephone'] = $connexion['numero_telephone'];
                         $_SESSION['email'] = $connexion['adresse_mail'];
                         $_SESSION['login'] = $connexion['login'];
+                        $_SESSION['id'] = $connexion['id'];
                         if ($connexion['type'] == 'admin') {
                             $css = "CSSnav";
                             $vue = "accueilAdmin";
@@ -234,6 +236,17 @@ switch ($function) {
         $css="CSSfaq";
         $faq="faq";
         $donneesfaq = recupereTous($bdd,$faq);
+        break;
+
+    case 'resultat':
+        $title = "Résultat";
+        $css = "CSSlisteUtilisateur";
+        $vue = "resultats";
+        $values = [
+            'capteur' => 1,
+            'idUtilisateur' => $_SESSION['id']
+        ];
+        $donneesMesure = recuperResultat($bdd, $values);
         break;
 
     default:
