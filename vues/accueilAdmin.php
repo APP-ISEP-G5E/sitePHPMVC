@@ -5,11 +5,11 @@
     <div id="margin"></div>
     <h3 class="titre"><span class="ruban">ALERTE</span></h3>
     <ul>
-        <li><a class="sous-titre" href="#">Alerte capteur température</a></li>
+        <li><a class="sous-titre" href="index.php?cible=admin&fonction=alerteTemperature">Alerte capteur température</a></li>
         <div class=""></div>
-        <li><a class="sous-titre" href="#">Alerte capteur rythme cardiaque</a></li>
+        <li><a class="sous-titre" href="index.php?cible=admin&fonction=alerteCardiaque">Alerte capteur rythme cardiaque</a></li>
         <div></div>
-        <li><a class="sous-titre" href="#">Alerte capteur sonore</a></li>
+        <li><a class="sous-titre" href="index.php?cible=admin&fonction=alerteSonore">Alerte capteur sonore</a></li>
         <div></div>
     </ul>
     <h3 class="titre"><span class="ruban">GESTION DES ACCES</span></h3>
