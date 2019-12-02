@@ -218,18 +218,18 @@ COMMIT;
 
 DROP TABLE IF EXISTS `donneesfixes`;
 CREATE TABLE IF NOT EXISTS `donneesfixes` (
-  `cgu` text,
-  `mentions_legales` text,
-  `numero_contact` varchar(20) NOT NULL,
-  `adresse_contact` varchar(255) NOT NULL
+  `idFixe` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `donneeFixe` text,
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `donneesfixes`
 --
 
-INSERT INTO `donneesfixes` (`cgu`, `mentions_legales`, `numero_contact`, `adresse_contact`) VALUES
-(NULL, NULL, '+336 00 00 00 00', 'admin@infinitemeasures.com');
+INSERT INTO `donneesfixes` (`id`, `donneFixe`) VALUES
+(3, '+336 00 00 00 00'),
+(4, 'admin@infintemeasures.com')
 COMMIT;
 
 
