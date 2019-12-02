@@ -242,7 +242,7 @@ switch ($function) {
 
 include('vues/header.php');
 include('vues/' . $vue . '.php');
-if ($vue == 'accueil' or $vue=='accueilAdmin' or $vue=='accueilGestionnaire') {
+if ($vue == 'accueil' or $vue=='accueilAdmin' or $vue=='accueilGestionnaire' or $vue=='accueilClient') {
     include('vues/footer.php');
 } else {
     include('vues/footerFixed.php');
