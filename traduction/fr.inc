@@ -86,5 +86,6 @@ define("_SAISIR_CANDIDAT","Saisir l'adresse mail du candidat");
 define("_SAISIR_GESTIONNAIRE","Saisir l'adresse mail du gestionnaire");
 define("_SAISIR_CAND","Saisir le nom d'utilisateur du nouveau candidat");
 define("_SAISIR_GEST","Saisir le nom d'utilisateur du nouveau gestionnaire");
-
+define("_SUP_CAND","Saisir le nom d'utilisateur du candidat à supprimer");
+define("_SUP_GEST","Saisir le nom d'utilisateur du gestionnaire à supprimer");
 ?>
