@@ -215,6 +215,24 @@ INSERT INTO `utilisateur` (`id`, `nom`, `prenom`, `date_naissance`, `numero_tele
 (10, 'apple', 'google', '1970-01-01', '0681234567', 'gestionnaire', 'g.apple', 'microsoft', 'g.apple@gmail.com');
 COMMIT;
 
+
+DROP TABLE IF EXISTS `donneesfixes`;
+CREATE TABLE IF NOT EXISTS `donneesfixes` (
+  `cgu` text,
+  `mentions_legales` text,
+  `numero_contact` varchar(20) NOT NULL,
+  `adresse_contact` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `donneesfixes`
+--
+
+INSERT INTO `donneesfixes` (`cgu`, `mentions_legales`, `numero_contact`, `adresse_contact`) VALUES
+(NULL, NULL, '+336 00 00 00 00', 'admin@infinitemeasures.com');
+COMMIT;
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
