@@ -58,6 +58,9 @@ switch ($function) {
                     elseif ($_POST['new_user'] == "" or $_POST['new_email'] == "") {
                         $alerte = "Aucune saisie";
                     }
+                    elseif(!filter_var(htmlspecialchars($_POST['new_email']), FILTER_VALIDATE_EMAIL)){
+                        $alerte="Adresse email non valide";
+                    }
                     else {
                         // Tout est ok, on peut inscrire le nouveau candidat
                         $values = [
@@ -89,7 +92,11 @@ switch ($function) {
                     //on verifie si il y a bien une saisie
                     elseif ($_POST['sup_user'] == "" or $_POST['sup_email'] == "") {
                         $alerte = "Aucune saisie";
-                    } else {
+                    } 
+                    elseif(!filter_var(htmlspecialchars($_POST['sup_email']), FILTER_VALIDATE_EMAIL)){
+                        $alerte="Adresse email non valide";
+                    }
+                    else {
                         // Tout est ok, on peut supprimer le candidat
                         $values = [
                             'type' => 'candidat',
@@ -139,6 +146,9 @@ switch ($function) {
                     elseif ($_POST['new_user'] == "" or $_POST['new_email'] == "") {
                         $alerte = "Aucune saisie";
                     }
+                    elseif(!filter_var(htmlspecialchars($_POST['new_email']), FILTER_VALIDATE_EMAIL)){
+                        $alerte="Adresse email non valide";
+                    }
                     else {
                         // Tout est ok, on peut inscrire le nouveau gestionnaire
                         $values = [
@@ -168,7 +178,11 @@ switch ($function) {
                     }
                     elseif ($_POST['sup_user'] == "" or $_POST['sup_email'] == "") {
                         $alerte = "Aucune saisie";
-                    } else {
+                    }
+                    elseif(!filter_var(htmlspecialchars($_POST['sup_email']), FILTER_VALIDATE_EMAIL)){
+                        $alerte="Adresse email non valide";
+                    }
+                    else {
                         // Tout est ok, on peut supprimer le gestionnaire
                         $values = [
                             'type' => 'gestionnaire',
@@ -198,6 +212,7 @@ switch ($function) {
             $vue= "listeUtilisateurs";
             $css="CSSlisteUtilisateurs";
             break;
+        
     case 'donneesUtilisateurs' :
             $title="Données des Utilisateurs";
             $donneesUtilisateurs=recupereDonneesUtilisateurs($bdd);
