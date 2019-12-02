@@ -20,20 +20,58 @@ body {
 	width: 100%;
 }
 
-#scroll_boutons{
+#top{
+	height: 60%;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+#bottom{
+	height: 40%;
+	width: 100%;
+	display: flex;
+	background-image: url("../pictures/Pattern_blanc.png");
+}
+.scroll_boutons{
 	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.scroll_boutons_who{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.scroll_boutons_who h3{
+	margin-bottom: 5px;
+	margin-top: 10px;
+}
+#Who h2 {
+	 padding: 30px;
+	 color: gray;
+	 font-size: 40px;
+	 border-radius: 25px;
 }
 #Who h3 {
 	padding: 30px;
 	color: white;
-	font-size: 40px;
+	font-size: 55px;
 	border-radius: 25px;
 }
 #Fplace{
 	height: 40px;
 }
 #Who{
-	height: 80%;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -54,14 +92,18 @@ body {
 	padding: 1% 10%;
 	text-align: justify;
 	color: dimgray;
+	font-size: 22px;
 	margin-left: 20px;
 	margin-right:  20px;
 }
 .resultat{
 	color:white;
 	text-decoration: none;
-	font-size:2.5rem;
+	font-size:2rem;
 	font-weight:bold;
 	text-decoration: underline;
+	width: 30%;
+	text-align: center;
 }
+
 

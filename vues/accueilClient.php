@@ -1,15 +1,28 @@
-<div id="vide">
-
 </div>
-<div class="accueil_contenu">
-    <div id="scroll_boutons">
+    <div>
         <div id="Who">
-            <a class="resultat" href="index.php?cible=utilisateurs&fonction=">Accéder à mes résultats</a>
-            <h3> Qui sommes nous ?</h3>
-            <a href="#QuiSommesNous"><img id="flèches" src="pictures/fleches.png" height="100px" width="auto"></a>
+            <div id="top">
+                <div class="scroll_boutons">
+                    <h2>Résultats</h2>
+                    <a href="index.php?cible=utilisateurs&fonction="><img id="flèches" src="pictures/fleches_link.png" height="100px" width="auto"></a>
+                </div>
+
+                <div class="scroll_boutons">
+                    <h2>Forum</h2>
+                    <a href="#"><img id="flèches" src="pictures/fleches_link.png" height="100px" width="auto"></a>
+                </div>
+            </div>
+
+            <div id="bottom" style="background: linear-gradient(217deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 70.71%),
+	linear-gradient(127deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%),
+	linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 70.71%) fixed;">
+                <div class="scroll_boutons_who">
+                    <h3> Qui sommes nous ?</h3>
+                    <a href="#QuiSommesNous"><img id="flèches" src="pictures/fleches.png" height="100px" width="auto"></a>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 <div id="QuiSommesNous">
     <div id="QSMplace"></div>
     <h1>Qui sommes-nous?</h1>
