@@ -18,7 +18,7 @@ include('./modele/requetes.utilisateurs.php');
 if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
     $function = "accueil";
 } else {
-    $function = $_GET['fonction'];
+    $function = htmlspecialchars($_GET['fonction']);
 }
 
 if (!isset($_SESSION['connecter']) || empty($_SESSION['connecter']))  {
