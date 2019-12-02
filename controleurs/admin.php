@@ -236,6 +236,35 @@ switch ($function) {
         }
             break;
         
+    case 'alerteTemperature':
+        $title="Alertes des Capteurs de températures";
+        $vue="alerteTemperature";
+        $css="CSSalertes";
+        break;
+
+    case 'alerteCardiaque':
+        $title="Alertes des Capteurs cardiaques";
+        $vue="alerteCardiaque";
+        $css="CSSalertes";
+        break;
+
+    case 'alerteSonore':
+        $title="Alertes des Capteurs sonores";
+        $vue="alerteSonore";
+        $css="CSSalertes";
+        break;
+
+    case 'actionneurLumineux':
+        $title="Actionneur Lumineux";
+        $vue="actionneurLumineux";
+        $css="CSSactionneur";
+        break;
+
+    case 'actionneurSonore':
+        $title="Actionneur Sonore";
+        $vue="actionneurSonore";
+        $css="CSSactionneur";
+        break;
         
     default:
         // si aucune fonction ne correspond au paramètre function passé en GET
