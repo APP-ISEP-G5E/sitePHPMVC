@@ -95,9 +95,49 @@ switch ($function) {
             $vue = "Profil";
             $title = "Profil";
         } else{
-            $vue = "connexion";
             $css = "CSSconnexion";
+            $vue = "connexion";
             $title = "Connexion";
+            $alerte = false;
+            // Cette partie du code est appelée si le formulaire a été posté
+            if (isset($_POST['connex_login']) and isset($_POST['connex_mdp'])) {
+                if ($_POST['connex_login'] == "" or $_POST['connex_mdp'] == "") {
+                    $alerte = "Aucune saisie";
+                } 
+                else {
+                    $values = [
+                        'username' => $_POST['connex_login'],
+                        'password' => $_POST['connex_mdp']
+                    ];
+                    $connexion = bddContient($bdd, $values);
+                    if ($connexion['mot_de_passe'] == $_POST['connex_mdp']) {
+                        $_SESSION['connecter'] = _DECONNEXION;
+                        $_SESSION['type'] = $connexion['type'];
+                        $_SESSION['nom'] = $connexion['nom'];
+                        $_SESSION['prenom'] = $connexion['prenom'];
+                        $_SESSION['numero_telephone'] = $connexion['numero_telephone'];
+                        $_SESSION['email'] = $connexion['adresse_mail'];
+                        $_SESSION['login'] = $connexion['login'];
+                        if ($connexion['type'] == 'admin') {
+                            $css = "CSSnav";
+                            $vue = "accueilAdmin";
+                            $title = "Accueil Admin";
+                        } elseif ($connexion['type'] == 'gestionnaire') {
+                            $css = "CSSnav";
+                            $vue = "accueilGestionnaire";
+                            $title = "Accueil Gestionnaire";
+
+                        } elseif ($connexion['type'] == 'client') {
+                            $css = "CSSaccueil";
+                            $vue = "accueil";
+                            $title = "Accueil";
+                        }
+                    } else {
+                        $alerte = "Login ou mot de passe incorrect";
+                    }
+                }
+
+            }
         }
         break;
 
