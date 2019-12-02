@@ -36,9 +36,9 @@ switch ($function) {
 
     case 'accueil':
         //affichage de l'accueil
-        if ($_SESSION['type'] == 'null' || $_SESSION['type'] == 'client') {
+        if ($_SESSION['type'] == 'null' || $_SESSION['type'] == 'candidat') {
             $css = "CSSaccueil";
-            $vue = "accueil";
+            $vue = "accueilClient";
             $title = "Accueil";
         } elseif ($_SESSION['type'] == 'gestionnaire'){
             $css = "CSSnav";
@@ -203,9 +203,9 @@ switch ($function) {
                             $vue = "accueilGestionnaire";
                             $title = "Accueil Gestionnaire";
 
-                        } elseif ($connexion['type'] == 'client') {
+                        } elseif ($connexion['type'] == 'candidat') {
                             $css = "CSSaccueil";
-                            $vue = "accueil";
+                            $vue = "accueilClient";
                             $title = "Accueil";
                         }
                     } else {
