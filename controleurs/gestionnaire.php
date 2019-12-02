@@ -37,7 +37,7 @@ switch ($function) {
 
 include ('vues/header.php');
 include ('vues/' . $vue . '.php');
-if ($vue == 'accueil'){
+if ($vue == 'accueilGestionnaire'){
     include('vues/footer.php');
 }
 else{
