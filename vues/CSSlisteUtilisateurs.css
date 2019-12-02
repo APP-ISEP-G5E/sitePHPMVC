@@ -23,7 +23,7 @@ h1{
     border-style:solid;
     border-radius: 5px;
     background-color: white;
-    overflow: scroll;
+    overflow-y: auto;
     box-shadow: 8px 8px 2px 1px rgba(0, 0, 255, .2)
 }
 .blocId{
@@ -39,14 +39,33 @@ h1{
     padding-left: 5px;
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 25%;
     border-left: #555555 1px solid;
 }
 .blocPrenom{
+    height: 100%;
     padding-left: 5px;
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 25%;
+    border-left: #555555 1px solid;
+}
+
+.blocResultat{
+    height: 100%;
+    padding-left: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    border-left: #555555 1px solid;
+}
+
+.blocDate{
+    height: 100%;
+    padding-left: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
     border-left: #555555 1px solid;
 }
 p{
