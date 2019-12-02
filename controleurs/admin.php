@@ -198,7 +198,13 @@ switch ($function) {
             $vue= "listeUtilisateurs";
             $css="CSSlisteUtilisateurs";
             break;
-        
+    case 'donneesUtilisateurs' :
+            $title="Données des Utilisateurs";
+            $donneesUtilisateurs=recupereDonneesUtilisateurs($bdd);
+            $vue="donnees_des_candidats";
+            $css="CSSlisteUtilisateurs";
+            break;
+
     case 'faq':
             $title="Modifier FAQ";
             $vue= "faqAdmin";
