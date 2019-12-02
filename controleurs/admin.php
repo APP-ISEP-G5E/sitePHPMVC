@@ -246,7 +246,7 @@ switch ($function) {
 
 include ('vues/header.php');
 include ('vues/' . $vue . '.php');
-if ($vue == 'accueil'){
+if ($vue == 'accueilAdmin'){
     include('vues/footer.php');
 }
 else{
