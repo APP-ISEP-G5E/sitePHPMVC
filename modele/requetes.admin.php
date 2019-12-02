@@ -13,6 +13,10 @@ $query = 'SELECT login,mot_de_passe FROM utilisateur';
 return $bdd->query($query)->fetchAll();
 }
 
+function recupereDonneesUtilisateurs(PDO $bdd): array {
+    $query = 'SELECT id,nom, prenom, valeur, instant FROM utilisateur INNER JOIN mesure ON mesure.Utilisateur_id = utilisateur.id ORDER BY nom,prenom';
+    return $bdd->query($query)->fetchAll();
+}
 /**
  * Ajoute un nouvel utilisateur dans la base de données
  * @param array $utilisateur
