@@ -18,7 +18,7 @@
     <div id="gestion">
         <h1 class="title_gest"><?php echo _SUP_GESTIONNAIRE; ?></h1>
         <form method="POST" action="">
-            <label for="username"><?php echo _SAISIR_GEST; ?></label>
+            <label for="username"><?php echo _SUP_GEST; ?></label>
             <input type="text" name="sup_user" placeholder="username">
 
             <label for="password"><?php echo _SAISIR_GESTIONNAIRE; ?></label>
