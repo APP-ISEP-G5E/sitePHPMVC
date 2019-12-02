@@ -126,10 +126,9 @@ switch ($function) {
                             $css = "CSSnav";
                             $vue = "accueilGestionnaire";
                             $title = "Accueil Gestionnaire";
-
-                        } elseif ($connexion['type'] == 'client') {
+                        } elseif ($connexion['type'] == 'candidat') {
                             $css = "CSSaccueil";
-                            $vue = "accueil";
+                            $vue = "accueilClient";
                             $title = "Accueil";
                         }
                     } else {
