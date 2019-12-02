@@ -213,13 +213,13 @@ INSERT INTO `utilisateur` (`id`, `nom`, `prenom`, `date_naissance`, `numero_tele
 (8, 'auguste', 'louis', '1970-01-01', '0687654312', 'gestionnaire', 'l.auguste', 'leau', 'l.auguste@gmail.com'),
 (9, 'eau', 'pierre', '1970-01-01', '0612345687', 'gestionnaire', 'p.eau', 'pierre99', 'pierre.eau@gmail.com'),
 (10, 'apple', 'google', '1970-01-01', '0681234567', 'gestionnaire', 'g.apple', 'microsoft', 'g.apple@gmail.com');
-COMMIT;
 
 
 DROP TABLE IF EXISTS `donneesfixes`;
 CREATE TABLE IF NOT EXISTS `donneesfixes` (
-  `idFixe` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `idFixe` int(10) NOT NULL AUTO_INCREMENT,
   `donneeFixe` text,
+  PRIMARY KEY (`idFixe`)
 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -227,9 +227,9 @@ CREATE TABLE IF NOT EXISTS `donneesfixes` (
 -- Déchargement des données de la table `donneesfixes`
 --
 
-INSERT INTO `donneesfixes` (`id`, `donneFixe`) VALUES
+INSERT INTO `donneesfixes` (`idFixe`, `donneeFixe`) VALUES
 (3, '+336 00 00 00 00'),
-(4, 'admin@infintemeasures.com')
+(4, 'admin@infintemeasures.com');
 COMMIT;
 
 
