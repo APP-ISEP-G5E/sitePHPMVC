@@ -36,7 +36,12 @@ switch ($function) {
 
     case 'accueil':
         //affichage de l'accueil
-        if ($_SESSION['type'] == 'null' || $_SESSION['type'] == 'candidat') {
+        if ($_SESSION['type'] == 'null') {
+            $css = "CSSaccueil";
+            $vue = "accueil";
+            $title = "Accueil";
+        }
+            elseif ($_SESSION['type'] == 'candidat') {
             $css = "CSSaccueil";
             $vue = "accueilClient";
             $title = "Accueil";
