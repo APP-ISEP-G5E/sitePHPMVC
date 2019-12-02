@@ -196,7 +196,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `mot_de_passe` varchar(2000) NOT NULL,
   `adresse_mail` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `utilisateur`
