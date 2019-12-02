@@ -77,14 +77,15 @@ define("_MOY","Average : ");
 define("_INTERVALLE","Adapted interval : ");
 
 //gestion acces candidat et gestionnaire
-define("_CREER_CANDIDAT","Créer un compte candidat");
-define("_CREER_GESTIONNAIRE","Créer un compte gestionnaire");
-define("_SUP_CANDIDAT","Supprimer un compte candidat");
-define("_SUP_GESTIONNAIRE","Supprimer un compte gestionnaire");
-define("_SAISIR_MDP","Saisir votre mot de passe pour valider");
-define("_SAISIR_CANDIDAT","Saisir l'adresse mail du candidat");
-define("_SAISIR_GESTIONNAIRE","Saisir l'adresse mail du gestionnaire");
-
-define("_SAISIR_CAND","Saisir le nom d'utilisateur du nouveau candidat");
-define("_SAISIR_GEST","Saisir le nom d'utilisateur du nouveau gestionnaire");
+define("_CREER_CANDIDAT","Create a candidate account");
+define("_CREER_GESTIONNAIRE","Create an operator account");
+define("_SUP_CANDIDAT","Delete a candidate account");
+define("_SUP_GESTIONNAIRE","Delete an operator account");
+define("_SAISIR_MDP","Enter your password to validate");
+define("_SAISIR_CANDIDAT","Enter the candidate's email address");
+define("_SAISIR_GESTIONNAIRE","Enter the operator's email address");
+define("_SAISIR_CAND","Enter the new candidate's username");
+define("_SAISIR_GEST","Enter the new operator's username");
+define("_SUP_CAND","Enter the username of the candidate to be deleted");
+define("_SUP_GEST","Enter the user name of the operator to be deleted");
 ?>
