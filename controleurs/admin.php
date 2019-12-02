@@ -205,6 +205,51 @@ switch ($function) {
             }
         }
         break;
+        case 'modifierMdp':
+        $css = "CSSchangement";
+        $vue = "changementMdp";
+        $title = "Changement mot de passe";
+
+        $values = ['username' => $_SESSION['login']];
+        $ancienMdp = bddPassword($bdd,$values);
+        if(isset($_POST['ancienMdp']) && isset($_POST['nouveauMdp']) && isset($_POST['confirmationNouveauMdp'])){
+            if(($_POST['ancienMdp']==$ancienMdp) && ($_POST['nouveauMdp'] == $_POST['confirmationNouveauMdp'])){
+                $req = $bdd->prepare('UPDATE utilisateur SET mot_de_passe = :nvmdp WHERE login = :lgn');
+                $req->execute(array(
+                    'nvmdp'=> $_POST['nouveauMdp'],
+                    'lgn'=> $_SESSION['login']
+                ));
+            }
+        }
+        break;
+
+    case 'modifierNumeroTelephone':
+        $css = "CSSchangement";
+        $vue = "changementNumero";
+        $title = "Changement Numero";
+        $values = ['username' => $_SESSION['login']];
+        if(isset($_POST['nouveauNumero'])){
+            $req = $bdd->prepare('UPDATE utilisateur SET numero_telephone = :nve WHERE login = :lgn');
+            $req->execute(array(
+                'nve'=> $_POST['nouveauNumero'],
+                'lgn'=> $_SESSION['login']
+            ));
+        }
+        break;
+
+    case 'modifierEmail':
+        $css = "CSSchangement";
+        $vue = "changementEmail";
+        $title = "Changement Email";
+        $values = ['username' => $_SESSION['login']];
+        if(isset($_POST['nouvelEmail'])){
+                $req = $bdd->prepare('UPDATE utilisateur SET adresse_mail = :nve WHERE login = :lgn');
+                $req->execute(array(
+                    'nve'=> $_POST['nouvelEmail'],
+                    'lgn'=> $_SESSION['login']
+                ));
+        }
+        break;
         
     case 'listeUtilisateurs' :
             $title="Liste des Utilisateurs";
