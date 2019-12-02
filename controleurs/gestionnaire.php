@@ -16,7 +16,7 @@ include('./modele/requetes.gestionnaire.php');
 if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
     $function = "accueil";
 } else {
-    $function = $_GET['fonction'];
+    $function = htmlspecialchars($_GET['fonction']);
 }
 $alerte=false;
 
