@@ -238,7 +238,7 @@ switch ($function) {
         $donneesfaq = recupereTous($bdd,$faq);
         break;
 
-    case 'resultat':
+    case 'resultats':
         $title = "Résultat";
         $css = "CSSlisteUtilisateur";
         $vue = "resultats";
