@@ -4,7 +4,7 @@
             <div id="top">
                 <div class="scroll_boutons">
                     <h2>Résultats</h2>
-                    <a href="index.php?cible=utilisateurs&fonction="><img id="flèches" src="pictures/fleches_link.png" height="100px" width="auto"></a>
+                    <a href="index.php?cible=utilisateurs&fonction=resultats"><img id="flèches" src="pictures/fleches_link.png" height="100px" width="auto"></a>
                 </div>
 
                 <div class="scroll_boutons">
