@@ -88,4 +88,7 @@ define("_SAISIR_CAND","Saisir le nom d'utilisateur du nouveau candidat");
 define("_SAISIR_GEST","Saisir le nom d'utilisateur du nouveau gestionnaire");
 define("_SUP_CAND","Saisir le nom d'utilisateur du candidat à supprimer");
 define("_SUP_GEST","Saisir le nom d'utilisateur du gestionnaire à supprimer");
+
+//changements
+define("_MODIFIER_MDP_PERSONNEL","Modifier le mot de passe");
 ?>
