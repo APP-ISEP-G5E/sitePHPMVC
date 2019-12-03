@@ -78,6 +78,7 @@ header ul {
         display: block;
         cursor: pointer;
         margin-right: 5px;
+        height: 44px;
     }
 
     #switch:checked + #navheader {
@@ -92,7 +93,7 @@ header ul {
 
     header ul {
         width: 100%;
-        background-color: lightblue;
+        background-color: #333333;
     }
 
     header li {
