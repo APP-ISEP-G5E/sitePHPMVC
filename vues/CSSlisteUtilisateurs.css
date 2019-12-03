@@ -68,6 +68,24 @@ h1{
     width: 25%;
     border-left: #555555 1px solid;
 }
+
+.blocEmail{
+    height: 100%;
+    padding-left: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    border-left: #555555 1px solid;
+}
+
+.blocIdentifiant{
+    height: 100%;
+    padding-left: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    border-left: #555555 1px solid;
+}
 p{
     margin: 5px;
     border-bottom: #555555 1px dashed;

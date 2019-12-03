@@ -25,6 +25,22 @@
                     <?php } ?>
                 </div>
 
+        <div class="blocIdentifiant">
+            <p style="font-weight: bold">LOGIN</p>
+            <?php
+            foreach ($donneesListeUtilisateurs as $element) { ?>
+                <P><?php echo  $element['login']; ?></P>
+            <?php } ?>
+        </div>
+
+        <div class="blocEmail">
+            <p style="font-weight: bold">ADRESSE MAIL</p>
+            <?php
+            foreach ($donneesListeUtilisateurs as $element) { ?>
+                <P><?php echo  $element['adresse_mail']; ?></P>
+            <?php } ?>
+        </div>
+
 
     </div>  <!--bloc questionReponse-->
 </div>
