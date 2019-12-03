@@ -91,4 +91,6 @@ define("_SUP_GEST","Saisir le nom d'utilisateur du gestionnaire à supprimer");
 
 //changements
 define("_MODIFIER_MDP_PERSONNEL","Modifier le mot de passe");
+define("_NOUVEAUMDP","Nouveau mot de passe :");
+define("_CMDP","Confirmer mot de passe :");
 ?>
