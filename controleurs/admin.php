@@ -234,6 +234,7 @@ switch ($function) {
                 'nve'=> $_POST['nouveauNumero'],
                 'lgn'=> $_SESSION['login']
             ));
+            $_SESSION['numero_telephone']=htmlspecialchars($_POST['nouveauNumero']);    //pour actualiser l'affichage de la page Mon profil
         }
         break;
 
@@ -248,6 +249,7 @@ switch ($function) {
                     'nve'=> $_POST['nouvelEmail'],
                     'lgn'=> $_SESSION['login']
                 ));
+            $_SESSION['email']=htmlspecialchars($_POST['nouvelEmail']);
         }
         break;
         
