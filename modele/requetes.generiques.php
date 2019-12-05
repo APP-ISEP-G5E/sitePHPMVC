@@ -75,4 +75,8 @@ function insertion(PDO $bdd, array $values, string $table): bool {
     return $donnees->execute();
 }
 
+function recupereChamp(PDO $bdd, $table, $champ){
+    $query = 'SELECT '. $champ .' FROM ' . $table;
+    return $bdd->query($query)->fetchAll();
+}
 ?>
