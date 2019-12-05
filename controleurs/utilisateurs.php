@@ -150,18 +150,24 @@ switch ($function) {
         $css = "CSSlegal";
         $vue = "nousContacter";
         $title = "Nous Contacter";
+        $donneesFixes ="donneesfixes";   //petit 'f' pour fixes
+        $donneesNousContacter = recupereTous($bdd,$donneesFixes);
         break;
 
     case 'cgu':
         $css = "CSSlegal";
         $vue = "cgu";
         $title = "CGU";
+        $donneesFixes ="donneesfixes";   //petit 'f' pour fixes
+        $donneesCGU = recupereTous($bdd,$donneesFixes);
         break;
 
     case 'mentionLegale':
         $css = "CSSlegal";
         $vue = "mentionLegale";
         $title = "Mentions légales";
+        $donneesFixes ="donneesfixes";   //petit 'f' pour fixes
+        $donneesML = recupereTous($bdd,$donneesFixes);
         break;
 
     case 'langue':
