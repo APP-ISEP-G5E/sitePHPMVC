@@ -6,7 +6,7 @@
 </div>
 
 <div id="QuiSommesNous">
-    <div id="QSMplace"></div>
+    <div id="QSNplace"></div>
     <h1>Qui sommes-nous?</h1>
     <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer scelerisque feugiat vestibulum. Duis vitae cursus risus, eu aliquam lectus. Nullam mattis accumsan lorem, eu mollis risus vulputate et. Nunc ut magna vitae nisl rhoncus tincidunt a non augue. Proin posuere nunc et aliquet hendrerit. Nulla sollicitudin felis arcu, a suscipit est facilisis pellentesque. Nunc lacinia lectus est, in tristique orci ullamcorper vel. Praesent eget mauris non nunc posuere tincidunt eget eu nisi. Pellentesque tristique a turpis vitae ullamcorper. Mauris gravida faucibus cursus. Nullam suscipit tellus eu mi sagittis, id porttitor orci ornare. Aenean nisi ligula, malesuada vitae odio sit amet, lacinia molestie lorem. Praesent pharetra gravida felis a luctus.
 
