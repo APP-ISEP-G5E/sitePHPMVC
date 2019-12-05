@@ -54,6 +54,8 @@ switch ($function) {
             $vue = "accueilAdmin";
             $title = "AccueilAdmin";
         }
+        $donneesFixes ="donneesfixes";   //petit 'f' pour fixes
+        $donneesQSN = recupereTous($bdd,$donneesFixes);
         break;
 
 
