@@ -108,4 +108,10 @@ function modifierMailSite(PDO $bdd, $mail){      //le mail affiché sur la page 
     return $req->execute();
 }
 
+function modifierQSN(PDO $bdd, $contenuQSN){      //modifier le qui sommes-nous
+    $req=$bdd->prepare('UPDATE donneesfixes SET donneeFixe = :newQSN WHERE (idFixe = 5)');
+    $req->bindValue(':newQSN', $contenuQSN, PDO::PARAM_STR);
+    return $req->execute();
+}
+
 ?>
