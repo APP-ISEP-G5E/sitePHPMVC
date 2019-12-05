@@ -84,4 +84,28 @@ function existantUtilisateur(PDO $bdd, array $utilisateur) {
 
 }
 
+function modifierCGU(PDO $bdd, $contenuCGU){
+    $req=$bdd->prepare('UPDATE donneesfixes SET donneeFixe = :newCGU WHERE (idFixe = 1)');
+    $req->bindValue(':newCGU', $contenuCGU, PDO::PARAM_STR);
+    return $req->execute();
+}
+
+function modifierMentionLegale(PDO $bdd, $contenuML){
+    $req=$bdd->prepare('UPDATE donneesfixes SET donneeFixe = :newML WHERE (idFixe = 2)');
+    $req->bindValue(':newML', $contenuML, PDO::PARAM_STR);
+    return $req->execute();
+}
+
+function modifierNumeroSite(PDO $bdd, $numero){    //le numéro affiché sur la page Nous contacter
+    $req=$bdd->prepare('UPDATE donneesfixes SET donneeFixe = :newNumero WHERE (idFixe = 3)');
+    $req->bindValue(':newNumero', $numero, PDO::PARAM_STR);
+    return $req->execute();
+}
+
+function modifierMailSite(PDO $bdd, $mail){      //le mail affiché sur la page Nous contacter
+    $req=$bdd->prepare('UPDATE donneesfixes SET donneeFixe = :newMail WHERE (idFixe = 4)');
+    $req->bindValue(':newMail', $mail, PDO::PARAM_STR);
+    return $req->execute();
+}
+
 ?>
