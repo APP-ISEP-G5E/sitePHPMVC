@@ -406,7 +406,28 @@ switch ($function) {
                 }
             }
         }
-        break;    
+        break;   
+        
+    case 'modifQSN':
+        $title = "Modifier le contenu de Qui sommes-nous";
+        $vue = "quisommesnousAdmin";
+        $css = "CSSaccueil";
+        $donneesFixes ="donneesfixes";   //petit 'f' pour fixes
+        $donneesQSN = recupereTous($bdd,$donneesFixes);
+        if(isset($_POST['contenuQSN'])){
+            if ($_POST['contenuQSN'] == "") {
+                $alerte = "Aucune saisie";
+            } else {
+                $contenuQSN = htmlspecialchars($_POST['contenuQSN']);
+                $retour = modifierQSN($bdd,$contenuQSN);
+                if($retour){
+                    $alerte = "Modification réussie";
+                } else {
+                    $alerte = "La modification du contenu Qui sommes-nous n'a pas fonctionné";
+                }
+            }
+        }
+        break;
         
     default:
         // si aucune fonction ne correspond au paramètre function passé en GET
