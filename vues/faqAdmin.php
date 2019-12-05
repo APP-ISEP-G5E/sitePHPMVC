@@ -26,7 +26,7 @@
                 <textarea name="ajoutQuestion" class="ajoutQuestion" rows="5" cols="60"></textarea>
                 <textarea name="ajoutReponse" class="ajoutReponse" rows="5" cols="60"></textarea>
             </div>
-            <input type="submit" value="SUBMIT">
+            <input type="submit" value="PUBLIER">
         </form>
     </div>
 </div>
