@@ -328,6 +328,86 @@ switch ($function) {
         $css="CSSactionneur";
         break;
         
+    case 'modifCGU':
+        $title = "Modifier les CGU";
+        $vue = "cguAdmin";
+        $css = "CSSlegal";
+        $donneesFixes = "donneesfixes";   //petit 'f' pour fixes
+        $donneesCGU = recupereTous($bdd, $donneesFixes);
+        if (isset($_POST['contenuCGU'])) {
+            if ($_POST['contenuCGU'] == "") {
+                $alerte = "Aucune saisie";
+            } else {
+                $contenuCGU = htmlspecialchars($_POST['contenuCGU']);
+                $retour = modifierCGU($bdd,$contenuCGU);
+                if($retour){
+                    $alerte = "Ajout réussi";
+                } else {
+                    $alerte = "La modification des CGU n'a pas fonctionné";
+                }
+            }
+        }
+        break;
+
+    case 'modifMentionsLegales':
+        $title = "Modifier les Mentions légales";
+        $vue = "mentionLegaleAdmin";
+        $css = "CSSlegal";
+        $donneesFixes = "donneesfixes";   //petit 'f' pour fixes
+        $donneesML = recupereTous($bdd, $donneesFixes);
+        if (isset($_POST['contenuML'])) {
+            if ($_POST['contenuML'] == "") {
+                $alerte = "Aucune saisie";
+            } else {
+                $contenuML = htmlspecialchars($_POST['contenuML']);
+                $retour = modifierMentionLegale($bdd,$contenuML);
+                if($retour){
+                    $alerte = "Ajout réussi";
+                } else {
+                    $alerte = "La modification des mentions légales n'a pas fonctionné";
+                }
+            }
+        }
+        break;
+        
+    case 'modifNousContacter':
+        $title = "Modifier la page Nous contacter";
+        $vue = "nousContacterAdmin";
+        $css = "CSSlegal";
+        $donneesFixes = "donneesfixes";   //petit 'f' pour fixes
+        $donneesNousContacter = recupereTous($bdd, $donneesFixes);
+
+        if (isset($_POST['contenuMail'])) {             //modifier le mail de contact
+            if ($_POST['contenuMail'] == "") {
+                $alerte = "Aucune saisie";
+            } else {
+                $contenuMail = htmlspecialchars($_POST['contenuMail']);
+                $retour = modifierMailSite($bdd,$contenuMail);
+                if($retour){
+                    $alerte = "Modification réussie";
+                } else {
+                    $alerte = "La modification du mail n'a pas fonctionné";
+                }
+            }
+        } elseif(isset($_POST['numeroTelephone'])){           //modifier le numéro de contact
+            if ($_POST['numeroTelephone'] == "") {
+                $alerte = "Aucune saisie";
+            } else {
+                $numeroTelephone = htmlspecialchars($_POST['numeroTelephone']);
+                if(preg_match("#[+]?[0-9]{2}([-. ]?[0-9]){4,5}$#",$numeroTelephone)){    //utilisation des expressions régulières pour controler la saisie de l'utilisateur
+                    $retour = modifierNumeroSite($bdd,$numeroTelephone);
+                    if($retour){
+                        $alerte = "Modification réussie";
+                    } else {
+                        $alerte = "La modification du numéro de contact n'a pas fonctionné";
+                    }
+                } else{
+                    $alerte="Saisie incorrecte";
+                }
+            }
+        }
+        break;    
+        
     default:
         // si aucune fonction ne correspond au paramètre function passé en GET
         $vue = "erreur404";
