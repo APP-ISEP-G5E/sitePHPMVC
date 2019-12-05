@@ -249,23 +249,23 @@ VALUES (1, 'philippe', 'guillaume', '1999-07-25', '0619637985', 'admin', 'g.phil
 --
 
 DROP TABLE IF EXISTS `donneesfixes`;
-CREATE TABLE IF NOT EXISTS `donneesfixes`
-(
-    `idFixe`     int(10) NOT NULL AUTO_INCREMENT,
-    `donneeFixe` text,
-    PRIMARY KEY (`idFixe`)
-
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8;
+CREATE TABLE IF NOT EXISTS `donneesfixes` (
+  `idFixe` int(10) NOT NULL AUTO_INCREMENT,
+  `donneeFixe` text,
+  PRIMARY KEY (`idFixe`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `donneesfixes`
 --
 
-INSERT INTO `donneesfixes` (`idFixe`, `donneeFixe`)
-VALUES (3, '+336 00 00 00 00'),
-       (4, 'admin@infintemeasures.com');
-
+INSERT INTO `donneesfixes` (`idFixe`, `donneeFixe`) VALUES
+(1, 'Je suis un texte pour la CGU,           eh oui !                                      '),
+(2, 'Je suis un texte pour les mentions légales !'),
+(3, '01010 10506 2'),
+(4, 'fzef@fzfe156.fe'),
+(5, 'Contenu qui-sommes nous ?          OK ok  ');
+COMMIT;
 --
 -- Structure de la table `forum`
 --
