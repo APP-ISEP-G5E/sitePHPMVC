@@ -448,6 +448,9 @@ switch ($function) {
 }
 
 include ('vues/header.php');
+if ($vue !== 'accueilAdmin'){
+    include('vues/accueilAdmin.php');
+}
 include ('vues/' . $vue . '.php');
 if ($vue == 'accueilAdmin'){
     include('vues/footer.php');
@@ -455,4 +458,5 @@ if ($vue == 'accueilAdmin'){
 else{
     include ('vues/footerFixed.php');
 }
+
 
