@@ -1,6 +1,6 @@
 <div>
     <p>
-        <img src="../pictures/coeur.jpg" alt="image de coeur"/><?php echo _CAPTEUR; ?>
+        <img src="pictures/coeur.jpg" alt="image de coeur"/><?php echo _CAPTEUR; ?>
     </p>
 </div>
 <div>
