@@ -288,6 +288,7 @@ switch ($function) {
                     $retour = ajouterQuestionReponse($bdd, $values);
                     if ($retour) {
                         $alerte = "Ajout réussie";
+                        header('Refresh: 0.5,index.php?cible=admin&fonction=faq');  // refresh dans 0.5sec
                     } else {
                         $alerte = "L'ajout dans la FAQ n'a pas fonctionné";
                     }
@@ -341,7 +342,8 @@ switch ($function) {
                 $contenuCGU = htmlspecialchars($_POST['contenuCGU']);
                 $retour = modifierCGU($bdd,$contenuCGU);
                 if($retour){
-                    $alerte = "Ajout réussi";
+                    $alerte = "Modification réussie";
+                    header('Refresh: 0.5, index.php?cible=admin&fonction=modifCGU');  // refresh dans 0.5sec
                 } else {
                     $alerte = "La modification des CGU n'a pas fonctionné";
                 }
@@ -362,9 +364,10 @@ switch ($function) {
                 $contenuML = htmlspecialchars($_POST['contenuML']);
                 $retour = modifierMentionLegale($bdd,$contenuML);
                 if($retour){
-                    $alerte = "Ajout réussi";
+                    $alerte = "Modification réussie";
                 } else {
                     $alerte = "La modification des mentions légales n'a pas fonctionné";
+                    header('Refresh: 0.5, index.php?cible=admin&fonction=modifMentionsLegales');  //refresh dans 0.5sec
                 }
             }
         }
@@ -385,6 +388,7 @@ switch ($function) {
                 $retour = modifierMailSite($bdd,$contenuMail);
                 if($retour){
                     $alerte = "Modification réussie";
+                    header('Refresh: 0.5, index.php?cible=admin&fonction=modifNousContacter');  //refresh dans 0.5sec
                 } else {
                     $alerte = "La modification du mail n'a pas fonctionné";
                 }
@@ -398,6 +402,7 @@ switch ($function) {
                     $retour = modifierNumeroSite($bdd,$numeroTelephone);
                     if($retour){
                         $alerte = "Modification réussie";
+                        header('Refresh: 0.5, index.php?cible=admin&fonction=modifNousContacter');  //refresh dans 0.5sec
                     } else {
                         $alerte = "La modification du numéro de contact n'a pas fonctionné";
                     }
@@ -422,6 +427,7 @@ switch ($function) {
                 $retour = modifierQSN($bdd,$contenuQSN);
                 if($retour){
                     $alerte = "Modification réussie";
+                    header('Refresh: 0.5, index.php?cible=admin&fonction=modifQSN');    //refresh dans 0.5sec
                 } else {
                     $alerte = "La modification du contenu Qui sommes-nous n'a pas fonctionné";
                 }
