@@ -13,7 +13,7 @@ if (session_status() != 2){
 }
 // on inclut le fichier modèle contenant les appels à la BDD
 include('./modele/requetes.utilisateurs.php');
-
+include('./modele/requetes.motdepasse.php');
 // si la fonction n'est pas définie, on choisit d'afficher l'accueil
 if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
     $function = "accueil";
@@ -117,7 +117,7 @@ switch ($function) {
                         'password' => htmlspecialchars($_POST['connex_mdp'])
                     ];
                     $connexion = bddContient($bdd, $values);
-                    if ($connexion['mot_de_passe'] == htmlspecialchars($_POST['connex_mdp'])) {
+                    if ($connexion['mot_de_passe'] == htmlspecialchars(MdP($_POST['connex_mdp']))) {
                         $_SESSION['connecter'] = _DECONNEXION;
                         $_SESSION['type'] = $connexion['type'];
                         $_SESSION['nom'] = $connexion['nom'];
@@ -199,7 +199,7 @@ switch ($function) {
                         'password' => htmlspecialchars($_POST['connex_mdp'])
                     ];
                     $connexion = bddContient($bdd, $values);
-                    if ($connexion['mot_de_passe'] == $_POST['connex_mdp']) {
+                    if ($connexion['mot_de_passe'] == MdP($_POST['connex_mdp'])) {
                         $_SESSION['connecter'] = _DECONNEXION;
                         $_SESSION['type'] = $connexion['type'];
                         $_SESSION['nom'] = $connexion['nom'];
@@ -248,7 +248,7 @@ switch ($function) {
 
     case 'resultats':
         $title = "Résultat";
-        $css = "CSSlisteUtilisateurs";
+        $css = "CSSlisteUtilisateur";
         $vue = "resultats";
         $values = [
             'capteur' => 1,
