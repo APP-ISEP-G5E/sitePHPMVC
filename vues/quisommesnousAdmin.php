@@ -12,7 +12,7 @@ require("accueil.php");
                     } ?>
                 </textarea>
             </div>
-            <input type="submit" value="MODIFIER le contenu de Qui sommes-nous">
+            <input type="submit" value="Modifier le contenu de Qui sommes-nous">
         </form>
     </div>
 </div>
