@@ -10,7 +10,12 @@
  * Contrôleur de l'admin
  */
 // on appelle le modèle qui fait appel aux requetes génériques
-include('./modele/requetes.admin.php');
+if($_SESSION['type']=="admin"){
+    include('./modele/requetes.admin.php');
+} else{
+    throw new Exception("Vous vous êtes égaré.");
+}
+
 
 // si la fonction n'est pas définie, on choisit d'afficher l'accueil
 if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
