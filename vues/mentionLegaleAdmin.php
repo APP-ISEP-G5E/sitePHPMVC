@@ -12,7 +12,7 @@ require("mentionLegale.php");
                     } ?>
                 </textarea>
             </div>
-            <input type="submit" value="MODIFIER les Mentions légales">
+            <input type="submit" value="Modifier les mentions légales">
         </form>
     </div>
 </div>
