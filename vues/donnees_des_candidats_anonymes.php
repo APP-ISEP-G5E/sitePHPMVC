@@ -5,9 +5,9 @@
         <table id="myTable">
             <tr>
                 <!--<th onclick="sortTable(0)">Id</th>-->
-                <th onclick="sortTable(1)">Résultat</i></th>
-                <th onclick="sortTable(2)">Date</th>
-                <th onclick="sortTable(3)">Id Capteur</th>
+                <th onclick="sortTable(0)">Résultat</i></th>
+                <th onclick="sortTable(1)">Date</th>
+                <th onclick="sortTable(2)">Id Capteur</th>
                 <th></th>
             </tr>
             <?php
