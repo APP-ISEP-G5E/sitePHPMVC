@@ -5,12 +5,16 @@ body{
 #vide{
     height: 44px;
 }
+#contenuAccueil{
+    display:block;
+    width:100%;
+
+}
 #contenuFaq{
     display:block;
     justify-content: center;
     align-content:center;
     width:100%;
-
 }
 h1{
     text-align: center;
