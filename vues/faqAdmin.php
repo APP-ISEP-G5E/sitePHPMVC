@@ -1,4 +1,4 @@
-<div>
+<div id="contenuAccueil">
 <div id="vide"></div>
 <div id="contenuFaq">
     <h1>FAQ</h1>
