@@ -248,7 +248,7 @@ switch ($function) {
 
     case 'resultats':
         $title = "Résultat";
-        $css = "CSSlisteUtilisateur";
+        $css = "CSSlisteUtilisateurs";
         $vue = "resultats";
         $values = [
             'capteur' => 1,
