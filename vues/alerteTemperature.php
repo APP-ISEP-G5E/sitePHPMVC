@@ -1,4 +1,4 @@
-<div>
+<div id="contenuAccueil">
     <div>
         <p>
             <img src="../pictures/thermometre.jpg" alt="image de thermomètre"/><?php echo _CAPTEUR; ?>
