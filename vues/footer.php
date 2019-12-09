@@ -1,4 +1,9 @@
 <?php
+if($vue=='accueilAdmin' or $vue=='accueilGestionnaire'){
+    echo "</div>";
+}
+?>
+<?php
 /**
  * Vue : pied de page
  */
