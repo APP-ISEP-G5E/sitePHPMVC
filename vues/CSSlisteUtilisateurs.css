@@ -13,7 +13,12 @@ h1{
     text-align: center;
     color: black;
 }
-
+#contenuAccueil{
+    display:block;
+    justify-content: center;
+    align-content:center;
+    width:100%;
+}
 .blocListeUtilisateurs{
     display: flex;
     height: 450px;
