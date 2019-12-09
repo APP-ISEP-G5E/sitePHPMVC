@@ -5,8 +5,8 @@
         <table id="myTable">
             <tr >
                 <!--<th onclick="sortTable(0)">Id</th>-->
-                <th onclick="sortTable(1)">Valeur</i></th>
-                <th onclick="sortTable(2)">Date</th>
+                <th onclick="sortTable(0)">Valeur</i></th>
+                <th onclick="sortTable(1)">Date</th>
                 <th></th>
             </tr>
             <?php
