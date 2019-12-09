@@ -9,7 +9,7 @@
 /**
  * Contrôleur de l'admin
  */
-// on appelle le modèle qui fait appel aux requetes génériques
+// on vérifie bien que le visiteur est un admin, puis on appelle le modèle qui fait appel aux requetes génériques
 if($_SESSION['type']=="admin"){
     include('./modele/requetes.admin.php');
 } else{
