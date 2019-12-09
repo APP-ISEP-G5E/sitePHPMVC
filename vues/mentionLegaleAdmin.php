@@ -1,3 +1,7 @@
+<div>
+    <div id="vide">
+
+    </div>
 <?php
 require("mentionLegale.php");
 ?>
@@ -15,4 +19,9 @@ require("mentionLegale.php");
             <input type="submit" value="Modifier les mentions légales">
         </form>
     </div>
+</div>
+    <div id="vide">
+
+    </div>
+</div>
 </div>

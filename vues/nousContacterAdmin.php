@@ -1,7 +1,10 @@
+<div>
+    <div id="vide">
+
+    </div>
 <?php
 require("nousContacter.php");
 ?>
-
 <div class="contact">
     <div id="parametrer">
         <form method="POST" action="">
@@ -27,3 +30,5 @@ require("nousContacter.php");
 </div>
 
 <div id="vide"> </div>
+</div>
+</div>

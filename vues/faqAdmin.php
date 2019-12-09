@@ -1,3 +1,4 @@
+<div>
 <div id="vide"></div>
 <div id="contenuFaq">
     <h1>FAQ</h1>
@@ -32,4 +33,6 @@
 </div>
 <div id="vide"></div>
 <div id="vide"></div>
+</div>
+</div>
 
