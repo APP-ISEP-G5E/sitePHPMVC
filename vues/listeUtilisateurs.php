@@ -1,4 +1,4 @@
-<div>
+<div id="contenuAccueil">
     <div id="vide"></div>
     <h1>Liste des utilisateurs</h1>
     <input type="text" id="myInput" onkeyup="triFunction()" placeholder="Search for names..">
