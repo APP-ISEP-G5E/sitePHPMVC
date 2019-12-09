@@ -9,8 +9,12 @@
 /**
  * Contrôleur du gestionnaire
  */
-// on appelle le modèle qui fait appel aux requetes génériques
-include('./modele/requetes.gestionnaire.php');
+// on vérifie bien que le visiteur est un gestionnaire, puis on appelle le modèle qui fait appel aux requetes génériques
+if($_SESSION['type']=="gestionnaire"){
+    include('./modele/requetes.gestionnaire.php');
+} else{
+    throw new Exception("Vous vous êtes égaré.");
+}
 
 // si la fonction n'est pas définie, on choisit d'afficher l'accueil
 if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
