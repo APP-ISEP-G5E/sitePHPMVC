@@ -370,9 +370,9 @@ switch ($function) {
                 $retour = modifierMentionLegale($bdd,$contenuML);
                 if($retour){
                     $alerte = "Modification réussie";
+                    header('Refresh: 0.5, index.php?cible=admin&fonction=modifMentionsLegales');  //refresh dans 0.5sec
                 } else {
                     $alerte = "La modification des mentions légales n'a pas fonctionné";
-                    header('Refresh: 0.5, index.php?cible=admin&fonction=modifMentionsLegales');  //refresh dans 0.5sec
                 }
             }
         }
