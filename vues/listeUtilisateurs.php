@@ -1,5 +1,4 @@
 <div id="contenuAccueil">
-    <div id="vide"></div>
     <h1>Liste des utilisateurs</h1>
     <input type="text" id="myInput" onkeyup="triFunction()" placeholder="Search for names..">
     <div id="contenuListeUttilisateurs">
@@ -9,8 +8,8 @@
                     <!--<th onclick="sortTable(0)">Id</th>-->
                     <th onclick="sortTable(0)">Nom</i></th>
                     <th onclick="sortTable(1)">Prénom</th>
-                    <th onclick="sortTable(2)">login</th>
-                    <th onclick="sortTable(3)">adresse email</th>
+                    <th onclick="sortTable(2)">Identifiant</th>
+                    <th onclick="sortTable(3)">Adresse email</th>
                     <th onclick="sortTable(4)">Date naissance</th>
                     <th onclick="sortTable(5)">N° téléphone</th>
                     <th></th>

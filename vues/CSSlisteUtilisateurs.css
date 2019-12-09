@@ -21,8 +21,8 @@ h1{
 }
 .blocListeUtilisateurs{
     display: flex;
-    height: 450px;
-    margin: 3% 15%;
+    height:40%;
+    margin: 3% 8%;
     border-color: #cccccc;
     border-style:solid;
     border-radius: 5px;
