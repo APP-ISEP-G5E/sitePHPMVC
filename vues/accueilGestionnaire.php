@@ -1,6 +1,7 @@
 <div id="vide">
 
 </div>
+<div id="allinone">
 <nav id="naviguation">
     <div id="margin"></div>
     <h3 class="titre"><span class="ruban">ALERTE</span></h3>
