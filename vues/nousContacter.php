@@ -5,12 +5,14 @@
     <div id="mail">
         <img src="pictures/mail.png" height="100px" width="auto">
         <p>
-            <?php
-            foreach ($donneesNousContacter as $element) { ?>
-                <?php if($element['idFixe'] == 4){     //4 correspond à l'id mail
-                    echo $element['donneeFixe'];        //affiche le mail
-                } ?>
-            <?php } ?>
+            <a href="mailto:">    <!--pour que ce soit un mail cliquable-->
+                <?php
+                foreach ($donneesNousContacter as $element) { ?>
+                    <?php if($element['idFixe'] == 4){     //4 correspond à l'id mail
+                        echo $element['donneeFixe'];        //affiche le mail
+                    } ?>
+                <?php } ?>
+            </a>    
         </p>
     </div>
 
