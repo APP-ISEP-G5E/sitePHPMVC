@@ -79,6 +79,9 @@ switch ($function) {
 }
 
 include ('vues/header.php');
+if ($vue !== 'accueilGestionnaire'){
+    include('vues/accueilGestionnaire.php');
+}
 include ('vues/' . $vue . '.php');
 if ($vue == 'accueilGestionnaire'){
     include('vues/footer.php');
@@ -86,4 +89,5 @@ if ($vue == 'accueilGestionnaire'){
 else{
     include ('vues/footerFixed.php');
 }
+
 
