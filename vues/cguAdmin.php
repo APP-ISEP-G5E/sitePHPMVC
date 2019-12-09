@@ -12,7 +12,7 @@ require("cgu.php");
                     } ?>
                 </textarea>
             </div>
-            <input type="submit" value="MODIFIER les conditions générales d'utilisation">
+            <input type="submit" value="Modifier les conditions générales d'utilisation">
         </form>
     </div>
 </div>
