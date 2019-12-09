@@ -1,4 +1,4 @@
-<div>
+<div id="contenuAccueil">
     <div>
         <p>
             <img src="pictures/hp.JPG" alt="image de haut-parleur"/><?php echo _CAPTEUR; ?>
