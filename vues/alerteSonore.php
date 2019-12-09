@@ -1,6 +1,6 @@
 <div>
     <p>
-        <img src="../pictures/hp.JPG" alt="image de haut-parleur"/><?php echo _CAPTEUR; ?>
+        <img src="pictures/hp.JPG" alt="image de haut-parleur"/><?php echo _CAPTEUR; ?>
     </p>
 </div>
 <div>
