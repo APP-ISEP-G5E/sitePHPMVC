@@ -10,7 +10,10 @@ body{
     width:100%;
     min-height:44px;
 }
-
+#allinone{
+    display:flex;
+    flex-direction: row;
+}
 #naviguation{
     background: linear-gradient(to bottom, #ededef,#f5f5f7);
     width:18%;
