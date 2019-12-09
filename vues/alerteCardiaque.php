@@ -1,4 +1,4 @@
-<div>
+<div id="contenuAccueil">
     <div>
         <p>
             <img src="pictures/coeur.jpg" alt="image de coeur"/><?php echo _CAPTEUR; ?>
