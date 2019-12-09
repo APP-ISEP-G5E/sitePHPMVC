@@ -6,12 +6,12 @@
         <table id="myTable">
             <tr >
                 <!--<th onclick="sortTable(0)">Id</th>-->
-                <th onclick="sortTable(1)">Nom</i></th>
-                <th onclick="sortTable(2)">Prénom</th>
-                <th onclick="sortTable(3)">login</th>
-                <th onclick="sortTable(4)">adresse email</th>
-                <th onclick="sortTable(5)">Date naissance</th>
-                <th onclick="sortTable(6)">N° téléphone</th>
+                <th onclick="sortTable(0)">Nom</i></th>
+                <th onclick="sortTable(1)">Prénom</th>
+                <th onclick="sortTable(2)">login</th>
+                <th onclick="sortTable(3)">adresse email</th>
+                <th onclick="sortTable(4)">Date naissance</th>
+                <th onclick="sortTable(5)">N° téléphone</th>
                 <th></th>
 
 
