@@ -8,7 +8,7 @@ require("nousContacter.php");
             <div class="input">
                 <p>
                 <input type="email" name="contenuMail" placeholder="Modifier votre mail ici">
-                <input type="submit" value="MODIFIER l'adresse mail">
+                <input type="submit" value="Modifier l'adresse mail">
                 </p>
             </div>
         </form>
@@ -18,8 +18,8 @@ require("nousContacter.php");
         <form method="POST" action="">
             <div class="input">
                 <p>
-                    <input type="text" name="numeroTelephone" placeholder="Modifier le numéro de téléphone ici">
-                    <input type="submit" value="MODIFIER le numéro de téléphone">
+                    <input type="text" name="numeroTelephone" placeholder="Modifier le numéro de téléphone ici" size="28">
+                    <input type="submit" value="Modifier le numéro de téléphone">
                 </p>
             </div>
         </form>
