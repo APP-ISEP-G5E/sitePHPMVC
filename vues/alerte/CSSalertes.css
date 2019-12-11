@@ -1,0 +1,94 @@
+html{
+	width: 100%;
+	height: 100%;
+}
+body {
+	margin: 0px;
+	background-image: url("../../pictures/Pattern_blanc.png");
+	height: 100%;
+}
+#contenuAccueil{
+	display:block;
+	width:100%;
+}
+.droite{
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	width:40%;
+	height: 100%;
+	margin-right: 3%;
+	
+}
+.fieldset2
+{
+	box-sizing: border-box;
+	display: inline-block;
+	border-color: blue;
+	border-width: 5px;
+	height: 60%;
+	margin-top: 3%;
+	vertical-align: center;
+	background-color: whitesmoke;
+	
+}
+.fieldset3
+{
+	box-sizing: border-box;
+	display: flex;
+	border-color:blue;
+	border-width: 5px;
+	height: 100%;
+	width: 60%;
+	margin: 0 3%;
+	background-color: whitesmoke;
+}
+.fieldset4
+{
+	box-sizing: border-box;
+	display:flex;
+	border-color:blue;
+	border-width: 5px;
+	height: 60%;
+	background-color: whitesmoke;
+}
+.thermo
+{
+	position:absolute;
+	top:15%;
+	left:2%;
+}
+.min
+{
+	box-sizing: border-box;
+	display:flex;
+}
+.max
+{
+	box-sizing: border-box;
+	display:flex;
+}
+.moy
+{
+	box-sizing: border-box;
+	display:flex;
+}
+.ia
+{
+	box-sizing: border-box;
+	display:flex;
+}
+.countainer{
+	box-sizing: border-box;
+	display: flex;
+	height: 60%;
+	align-items: center;
+}
+p1 {
+	word-spacing: 5px;
+}
+
+p {
+	font-family: verdana;
+  	font-size: 20px;
+}

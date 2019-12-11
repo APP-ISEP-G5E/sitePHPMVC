@@ -29,46 +29,46 @@ switch ($function) {
 
     case 'accueil':
         //affichage de l'accueil
-        $css="CSSnav";
-        $vue = "accueilGestionnaire";
+        $css="accueil/CSSnav";
+        $vue = "accueil/accueilGestionnaire";
         $title = "Accueil Gestionnaire";
         break;
 
     case 'alerteTemperature':
         $title="Alertes des Capteurs de températures";
-        $vue="alerteTemperature";
-        $css="CSSalertes";
+        $vue="alerte/alerteTemperature";
+        $css="alerte/CSSalertes";
         break;
 
     case 'alerteCardiaque':
         $title="Alertes des Capteurs cardiaques";
-        $vue="alerteCardiaque";
-        $css="CSSalertes";
+        $vue="alerte/alerteCardiaque";
+        $css="alerte/CSSalertes";
         break;
 
     case 'alerteSonore':
         $title="Alertes des Capteurs sonores";
-        $vue="alerteSonore";
-        $css="CSSalertes";
+        $vue="alerte/alerteSonore";
+        $css="alerte/CSSalertes";
         break;
 
     case 'actionneurLumineux':
         $title="Actionneur Lumineux";
-        $vue="actionneurLumineux";
-        $css="CSSactionneur";
+        $vue="actionneur/actionneurLumineux";
+        $css="actionneur/CSSactionneur";
         break;
 
     case 'actionneurSonore':
         $title="Actionneur Sonore";
-        $vue="actionneurSonore";
-        $css="CSSactionneur";
+        $vue="actionneur/actionneurSonore";
+        $css="actionneur/CSSactionneur";
         break;
 
     case 'donneesUtilisateursAnonymes' :
         $title="Données des Utilisateurs Anonymes";
         $donneesUtilisateurs=recupereDonneesUtilisateurs($bdd);
-        $vue="donnees_des_candidats_anonymes";
-        $css="CSSlisteUtilisateurs";
+        $vue="resultat/donnees_des_candidats_anonymes";
+        $css="resultat/CSSlisteUtilisateurs";
         break;
 
     default:
@@ -78,16 +78,16 @@ switch ($function) {
         $message = "Erreur 404 : la page recherchée n'existe pas.";
 }
 
-include ('vues/header.php');
-if ($vue !== 'accueilGestionnaire'){
-    include('vues/accueilGestionnaire.php');
+include('vues/header/header.php');
+if ($vue !== 'accueil/accueilGestionnaire'){
+    include('vues/accueil/accueilGestionnaire.php');
 }
 include ('vues/' . $vue . '.php');
-if ($vue == 'accueilGestionnaire'){
-    include('vues/footer.php');
+if ($vue == 'accueil/accueilGestionnaire'){
+    include('vues/header/footer.php');
 }
 else{
-    include ('vues/footerFixed.php');
+    include('vues/header/footerFixed.php');
 }
 
 

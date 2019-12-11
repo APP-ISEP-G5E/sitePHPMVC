@@ -1,0 +1,112 @@
+body{
+    background-image: url("../../pictures/Pattern_blanc.png");
+    margin: 0 0;
+}
+#vide{
+    height: 44px;
+}
+#contenuAccueil{
+    display:block;
+    width:100%;
+
+}
+#contenuFaq{
+    display:block;
+    justify-content: center;
+    align-content:center;
+    width:100%;
+}
+h1{
+    text-align: center;
+}
+
+.blocQuestionReponse{
+    background-color:white;
+    border-radius: 5px;
+    border-style:solid;
+    border-color: #cccccc;
+    margin:20 15%;
+    min-width:500px;
+    padding:15px;
+    box-shadow: 8px 8px 2px 1px rgba(0, 0, 255, .2);
+}
+.blocQuestion, .blocReponse{
+    width:100%;
+
+    color:black;
+}
+.blocQuestion
+{
+    font-size:1.3rem;
+    margin-bottom: 5px;
+    font-weight:bold;
+}
+
+.blocReponse{
+    font-size:1.1rem;
+    margin-top:5px;
+    margin-left:30px;
+    margin-right:10px;
+}
+#faq{
+    display:flex;
+    width:100%;
+    justify-content:center;
+    align-content: center;
+}
+#parametrer{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border-style:solid;
+    border-color: #cccccc;
+    padding:15px;
+    margin:5 15%;
+    min-height:150px;
+    box-shadow: 8px 8px 2px 1px rgba(0, 0, 255, .2);
+    min-width:500px;
+    background-color: white;
+}
+form{
+    margin: 0 0;
+}
+textarea{
+    width: 48%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=submit] {
+    width: 100%;
+    background-color: #0066CC;
+    color: white;
+    padding: 14px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #0022cc;
+}
+label{
+    font-weight:bold;
+    font-size:1.3rem;
+}
+.label{
+    width:100%;
+    display:flex;
+    justify-content: space-evenly;
+}
+.input{
+    width:100%;
+    display:flex;
+    justify-content:space-evenly;
+}
+

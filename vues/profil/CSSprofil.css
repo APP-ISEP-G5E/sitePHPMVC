@@ -1,0 +1,64 @@
+body {
+    height: 100%;
+    width: 100%;
+    background-image: url("../../pictures/Pattern_blanc.png");
+    margin: 0 0;
+}
+/*modification du conteneur*/
+.conteneur{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    margin-top:10%;
+    border-radius: 5px;
+    border-style:solid;
+    border-color: #cccccc;
+    padding:20px;
+    width:45%;
+    height:30%;
+    min-width:500px;
+    background-color: white;
+    box-shadow: 8px 8px 2px 1px rgba(0, 0, 255, .2);
+}
+.conteneur h1{
+    text-align: center;
+    color:black;
+    width: 20%;
+    min-width:240px;
+}
+
+.informations{
+    padding: 0px;
+    width: 100%;
+    float: left;
+}
+
+.informations p{
+    font-size:1.3rem;
+    margin-top:4%;
+    margin-bottom:4%;
+}
+button{
+    float: right;
+    font-size:1.3rem;
+    text-decoration: none;
+    text-align: center;
+    color:  #0066cc;
+    border: none;
+    display: inline-block;
+    background-color: white;
+}
+button:hover{
+    font-size:1.45rem;
+    transition: 0.4s;
+    border-radius: 5px;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    cursor: pointer;
+}
+
+.profil{
+    font-weight:bold;
+}
