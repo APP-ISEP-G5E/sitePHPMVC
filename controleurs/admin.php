@@ -34,168 +34,6 @@ switch ($function) {
         $title = "Accueil Admin";
         break;
 
-    case 'gestcandidat':
-        $css = "backoffice/CSSgestionacces";
-        $vue = "backoffice/creerCandidat";
-        $title = "Créer / Supprimer un candidat";
-        // inscription ou suppresion d'un utilisateur
-        $alerte = false;
-        // Cette partie du code est appelée si le formulaire a été posté
-        if (isset($_POST['verif_mdp'])) {
-            $values = [
-                'username' => $_SESSION['login'],
-            ];
-            $connexion = bddPassword($bdd, $values);
-            //on verifie que  le mot de passe de l'admin est correcte
-            if ($connexion['mot_de_passe'] == htmlspecialchars($_POST['verif_mdp'])) {
-                //Pour ajouter un candidat
-                if (isset($_POST['new_user']) and isset($_POST['new_email'])) {
-                    $values = [
-                        'username' => htmlspecialchars($_POST['new_user'])
-                    ];
-                    //on verifie si l'utilisateur existe
-                    $existe = existantUtilisateur($bdd, $values);
-                    if (!empty($existe)) {
-                        $alerte = "Le login est deja existant";
-                    } //on verifie si il y a bien une saisie
-                    elseif ($_POST['new_user'] == "" or $_POST['new_email'] == "") {
-                        $alerte = "Aucune saisie";
-                    } elseif (!filter_var(htmlspecialchars($_POST['new_email']), FILTER_VALIDATE_EMAIL)) {
-                        $alerte = "Adresse email non valide";
-                    } else {
-                        // Tout est ok, on peut inscrire le nouveau candidat
-                        $values = [
-                            'type' => 'candidat',
-                            'username' => htmlspecialchars($_POST['new_user']),
-                            'password' => chaine_aleatoire(8), // on genere un mot de passe aleatoire
-                            'email' => htmlspecialchars($_POST['new_email'])
-                        ];
-
-                        // Appel à la BDD à travers une fonction du modèle.
-                        $retour = ajouteUtilisateur($bdd, $values);
-                        if ($retour) {
-                            $alerte = "Inscription réussie";
-                        } else {
-                            $alerte = "L'inscription dans la BDD n'a pas fonctionné";
-                        }
-                    }
-                }
-                //Pour supprimer un candidat
-                if (isset($_POST['sup_user']) and isset($_POST['sup_email'])) {
-                    $values = [
-                        'username' => htmlspecialchars($_POST['sup_user'])
-                    ];
-                    $existe = existantUtilisateur($bdd, $values);
-                    //on verifie si le login existe dans la bdd
-                    if (empty($existe)) {
-                        $alerte = "Le login n'existe pas";
-                    } //on verifie si il y a bien une saisie
-                    elseif ($_POST['sup_user'] == "" or $_POST['sup_email'] == "") {
-                        $alerte = "Aucune saisie";
-                    } elseif (!filter_var(htmlspecialchars($_POST['sup_email']), FILTER_VALIDATE_EMAIL)) {
-                        $alerte = "Adresse email non valide";
-                    } else {
-                        // Tout est ok, on peut supprimer le candidat
-                        $values = [
-                            'type' => 'candidat',
-                            'username' => htmlspecialchars($_POST['sup_user']),
-                            'email' => htmlspecialchars($_POST['sup_email'])
-                        ];
-
-                        // Appel à la BDD à travers une fonction du modèle.
-                        $retour = supprimerUtilisateur($bdd, $values);
-                        if ($retour) {
-                            $alerte = "Suppression réussie";
-                        } else {
-                            $alerte = "La suppression dans la BDD n'a pas fonctionné";
-                        }
-                    }
-                }
-            } else {
-                $alerte = "Mot de passe incorrecte";
-            }
-        }
-        break;
-
-    case 'gestgestionnaire':
-        $css = "backoffice/CSSgestionacces";
-        $vue = "backoffice/creerGestionnaire";
-        $title = "Créer / Supprimer un gestionnaire";
-        // inscription d'un nouvel utilisateur
-        $alerte = false;
-        // Cette partie du code est appelée si le formulaire a été posté
-        if (isset($_POST['verif_mdp'])) {
-            $values = [
-                'username' => $_SESSION['login'],
-            ];
-            $connexion = bddPassword($bdd, $values);
-            //on verifie que  le mot de passe de l'admin est correcte
-            if ($connexion['mot_de_passe'] == htmlspecialchars($_POST['verif_mdp'])) {
-                if (isset($_POST['new_user']) and isset($_POST['new_email'])) {
-                    //Pour ajouter un gestionnaire
-                    $values = [
-                        'username' => htmlspecialchars($_POST['new_user'])
-                    ];
-                    $existe = existantUtilisateur($bdd, $values);
-                    if (!empty($existe)) {
-                        $alerte = "Le login est deja existant";
-                    } elseif ($_POST['new_user'] == "" or $_POST['new_email'] == "") {
-                        $alerte = "Aucune saisie";
-                    } elseif (!filter_var(htmlspecialchars($_POST['new_email']), FILTER_VALIDATE_EMAIL)) {
-                        $alerte = "Adresse email non valide";
-                    } else {
-                        // Tout est ok, on peut inscrire le nouveau gestionnaire
-                        $values = [
-                            'type' => 'gestionnaire',
-                            'username' => htmlspecialchars($_POST['new_user']),
-                            'password' => chaine_aleatoire(8),  // on genere un mot de passe aleatoire
-                            'email' => htmlspecialchars($_POST['new_email'])
-                        ];
-
-                        // Appel à la BDD à travers une fonction du modèle.
-                        $retour = ajouteUtilisateur($bdd, $values);
-                        if ($retour) {
-                            $alerte = "Inscription réussie";
-                        } else {
-                            $alerte = "L'inscription dans la BDD n'a pas fonctionné";
-                        }
-                    }
-                }
-                //Pour supprimer un gestionnaire
-                if (isset($_POST['sup_user']) and isset($_POST['sup_email'])) {
-                    $values = [
-                        'username' => htmlspecialchars($_POST['sup_user'])
-                    ];
-                    $existe = existantUtilisateur($bdd, $values);
-                    if (empty($existe)) {
-                        $alerte = "Le login n'existe pas";
-                    } elseif ($_POST['sup_user'] == "" or $_POST['sup_email'] == "") {
-                        $alerte = "Aucune saisie";
-                    } elseif (!filter_var(htmlspecialchars($_POST['sup_email']), FILTER_VALIDATE_EMAIL)) {
-                        $alerte = "Adresse email non valide";
-                    } else {
-                        // Tout est ok, on peut supprimer le gestionnaire
-                        $values = [
-                            'type' => 'gestionnaire',
-                            'username' => htmlspecialchars($_POST['sup_user']),
-                            'email' => htmlspecialchars($_POST['sup_email'])
-                        ];
-
-                        // Appel à la BDD à travers une fonction du modèle.
-                        $retour = supprimerUtilisateur($bdd, $values);
-                        if ($retour) {
-                            $alerte = "Suppression réussie";
-                        } else {
-                            $alerte = "La suppression dans la BDD n'a pas fonctionné";
-                        }
-                    }
-                }
-            } else {
-                $alerte = "Mot de passe incorrecte";
-            }
-        }
-        break;
-
     case 'modifierMdp':
         $css = "profil/CSSchangement";
         $vue = "profil/changementMdp";
@@ -244,50 +82,16 @@ switch ($function) {
         }
         break;
 
-    case 'listeUtilisateurs' :
-        $title = "Liste des Utilisateurs";
-        $donneesListeUtilisateurs = recupereTous($bdd, "utilisateur");
-        $vue = "resultat/listeUtilisateurs";
-        $css = "resultat/CSSlisteUtilisateurs";
-        break;
-
     case 'donneesUtilisateurs' :
         $title = "Données des Utilisateurs";
         $donneesUtilisateurs = recupereDonneesUtilisateurs($bdd);
         $vue = "resultat/donnees_des_candidats";
-        $css = "resultat/CSSlisteUtilisateurs";
+        $css = "user/CSSuser";
         break;
 
-    case 'faq':
-        $title = "Modifier FAQ";
-        $vue = "faq/faqAdmin";
-        $css = "faq/CSSfaq";
-        $faq = "faq";
-        $alerte = false;
-        $donneesfaq = recupereTous($bdd, $faq);
-        // Cette partie du code est appelée si le formulaire a été posté
-        if (isset($_POST['ajoutQuestion']) and isset($_POST['ajoutReponse'])) {
-            if ($_POST['ajoutQuestion'] == "" or $_POST['ajoutReponse'] == "") {
-                $alerte = "Aucune saisie";
-            } else {
-                $values = [
-                    'question' => htmlspecialchars($_POST['ajoutQuestion']),
-                    'reponse' => htmlspecialchars($_POST['ajoutReponse'])
-                ];
-                // Appel à la BDD à travers une fonction du modèle.
-                $retour = ajouterQuestionReponse($bdd, $values);
-                if ($retour) {
-                    $alerte = "Ajout réussie";
-                    header('Refresh: 0.5,index.php?cible=admin&fonction=faq');  // refresh dans 0.5sec
-                } else {
-                    $alerte = "L'ajout dans la FAQ n'a pas fonctionné";
-                }
-
-            }
-
-
-        }
-        break;
+    /**
+     * Alerte
+     */
 
     case 'alerteTemperature':
         $title = "Alertes des Capteurs de températures";
@@ -306,6 +110,10 @@ switch ($function) {
         $vue = "alerte/alerteSonore";
         $css = "alerte/CSSalertes";
         break;
+
+    /**
+     * Actionneur
+     */
 
     case 'actionneurLumineux':
         $title = "Actionneur Lumineux";
@@ -403,6 +211,7 @@ switch ($function) {
         }
         break;
 
+
     case 'modifQSN':
         $title = "Modifier le contenu de Qui sommes-nous";
         $vue = "backoffice/quisommesnousAdmin";
@@ -420,6 +229,189 @@ switch ($function) {
                     header('Refresh: 0.5, index.php?cible=admin&fonction=modifQSN');    //refresh dans 0.5sec
                 } else {
                     $alerte = "La modification du contenu Qui sommes-nous n'a pas fonctionné";
+                }
+            }
+        }
+        break;
+
+    /**
+     *  FAQ
+     */
+
+    case 'faq':
+        $title = "Modifier FAQ";
+        $vue = "faq/faqAdmin";
+        $css = "faq/CSSfaq";
+        $faq = recupereTous($bdd, "faq");
+        break;
+
+    //permet d'ajouter une question de la FAQ
+    case 'ajoutFAQ':
+        $vue = "faq/ajoutFAQ";
+        $css = "faq/CSSfaq";
+        // Cette partie du code est appelée si le formulaire a été posté
+        if (isset($_POST['ajoutQuestion']) and isset($_POST['ajoutReponse'])) {
+            if ($_POST['ajoutQuestion'] == "" or $_POST['ajoutReponse'] == "") {
+                $alerte = "Aucune saisie";
+            } else {
+                $values = [
+                    'question' => htmlspecialchars($_POST['ajoutQuestion']),
+                    'reponse' => htmlspecialchars($_POST['ajoutReponse'])
+                ];
+                // Appel à la BDD à travers une fonction du modèle.
+                $retour = addQuestion($bdd, $values);
+                if ($retour) {
+                    $alerte = "Ajout réussie";
+                    header('Refresh: 0.5,index.php?cible=admin&fonction=faq');  // refresh dans 0.5sec
+                } else {
+                    $alerte = "L'ajout dans la FAQ n'a pas fonctionné";
+                }
+            }
+        }
+        break;
+
+    //permet de supprimer une question de la FAQ
+    case 'supprimerFAQ':
+        $vue = "faq/supprimerFAQ";
+        $css = "faq/CSSfaq";
+        // Cette partie du code est appelée si le formulaire a été posté
+        if (isset($_POST['id'])) {
+            if (empty($_POST["id"])) {
+                $alerte = "Aucune saisie";
+            } else {
+                // Appel à la BDD à travers une fonction du modèle.
+                $retour = deleteQuestion($bdd, htmlspecialchars($_POST['id']));
+                if ($retour) {
+                    $alerte = "Suppression réussie";
+                    header('Refresh: 0.5,index.php?cible=admin&fonction=faq');  // refresh dans 0.5sec
+                } else {
+                    $alerte = "La suppression dans la FAQ n'a pas fonctionné";
+                }
+            }
+        }
+        break;
+
+    //permet de modifier une question de la FAQ
+    case 'updateFAQ':
+        $vue = "faq/updateFAQ";
+        $css = "faq/CSSfaq";
+        $faq = recupereQuestion($bdd, $_GET['id']);
+        // Cette partie du code est appelée si le formulaire a été posté
+        if (isset($_POST['question']) && isset($_POST['reponse'])) {
+            if (empty($_POST['question']) OR empty($_POST['reponse'])) {
+                $alerte = "Aucune saisie";
+            } else {
+                // Appel à la BDD à travers une fonction du modèle.
+                $values = [
+                    'id' => htmlspecialchars($_POST['id']),
+                    'question' => htmlspecialchars($_POST['question']),
+                    'reponse' => htmlspecialchars($_POST['reponse'])
+                ];
+                $retour = modifyQuestion($bdd, $values);
+                if ($retour) {
+                    $alerte = "La modification a réussie";
+                    header('Refresh: 0.5,index.php?cible=admin&fonction=faq');  // refresh dans 0.5sec
+                } else {
+                    $alerte = "La modification dans la FAQ n'a pas fonctionné";
+                }
+            }
+        }
+        break;
+
+    /**
+     *  Utilisateur
+     */
+    case 'user' :
+        $title = "Liste des Utilisateurs";
+        $user = recupereTous($bdd, "utilisateur");
+        $vue = "user/user";
+        $css = "user/CSSuser";
+        break;
+
+    case 'ajoutUSER':
+        $vue = "user/ajoutUSER";
+        $css = "user/CSSuser";
+        // Cette partie du code est appelée si le formulaire a été posté
+        if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['date']) && isset($_POST['telephone']) && isset($_POST['taille']) && isset($_POST['poids']) && isset($_POST['type']) && isset($_POST['login']) && isset($_POST['email'])) {
+            if (empty($_POST['nom']) OR empty($_POST['prenom']) OR empty($_POST['date']) OR empty($_POST['telephone']) OR empty($_POST['taille']) OR empty($_POST['poids']) OR empty($_POST['type']) OR empty($_POST['login']) OR empty($_POST['email'])) {
+                $alerte = "Aucune saisie";
+            } elseif (!filter_var(htmlspecialchars($_POST['email']), FILTER_VALIDATE_EMAIL)) {
+                $alerte = "Adresse email invalide";
+            } else {
+                $values = [
+                    'nom' => htmlspecialchars($_POST['nom']),
+                    'prenom' => htmlspecialchars($_POST['prenom']),
+                    'date_naissance' => htmlspecialchars($_POST['date']),
+                    'telephone' => htmlspecialchars($_POST['telephone']),
+                    'taille' => htmlspecialchars($_POST['taille']),
+                    'poids' => htmlspecialchars($_POST['poids']),
+                    'type' => htmlspecialchars($_POST['type']),
+                    'login' => htmlspecialchars($_POST['login']),
+                    'email' => htmlspecialchars($_POST['email']),
+                    'password' => hachagePassword(chaine_aleatoire(8))
+                ];
+                // Appel à la BDD à travers une fonction du modèle.
+                $retour = addUser($bdd, $values);
+                if ($retour) {
+                    $alerte = "Ajout réussie";
+                    header('Refresh: 0.5,index.php?cible=admin&fonction=user');  // refresh dans 0.5sec
+                } else {
+                    $alerte = "L'ajout n'a pas fonctionné";
+                }
+            }
+        }
+        break;
+
+    case 'updateUSER':
+        $vue = "user/updateUSER";
+        $css = "user/CSSuser";
+        $user = recupereUser($bdd, $_GET['id']);
+        // Cette partie du code est appelée si le formulaire a été posté
+        if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['date']) && isset($_POST['telephone']) && isset($_POST['taille']) && isset($_POST['poids']) && isset($_POST['type']) && isset($_POST['login']) && isset($_POST['email'])) {
+            if (empty($_POST['nom']) OR empty($_POST['prenom']) OR empty($_POST['date']) OR empty($_POST['telephone']) OR empty($_POST['taille']) OR empty($_POST['poids']) OR empty($_POST['type']) OR empty($_POST['login']) OR empty($_POST['email'])) {
+                $alerte = "Aucune saisie";
+            } elseif (!filter_var(htmlspecialchars($_POST['email']), FILTER_VALIDATE_EMAIL)) {
+                $alerte = "Adresse email invalide";
+            } else {
+                // Appel à la BDD à travers une fonction du modèle.
+                $values = [
+                    'id' => htmlspecialchars($_POST['id']),
+                    'nom' => htmlspecialchars($_POST['nom']),
+                    'prenom' => htmlspecialchars($_POST['prenom']),
+                    'date_naissance' => htmlspecialchars($_POST['date']),
+                    'telephone' => htmlspecialchars($_POST['telephone']),
+                    'taille' => htmlspecialchars($_POST['taille']),
+                    'poids' => htmlspecialchars($_POST['poids']),
+                    'type' => htmlspecialchars($_POST['type']),
+                    'login' => htmlspecialchars($_POST['login']),
+                    'email' => htmlspecialchars($_POST['email'])
+                ];
+                $retour = modifyUser($bdd, $values);
+                if ($retour) {
+                    $alerte = "La modification a réussie";
+                    header('Refresh: 0.5,index.php?cible=admin&fonction=user');  // refresh dans 0.5sec
+                } else {
+                    $alerte = "La modification n'a pas fonctionné";
+                }
+            }
+        }
+        break;
+
+    case 'deleteUSER':
+        $vue = "user/deleteUSER";
+        $css = "user/CSSuser";
+        // Cette partie du code est appelée si le formulaire a été posté
+        if (isset($_POST['id'])) {
+            if (empty($_POST["id"])) {
+                $alerte = "Aucune saisie";
+            } else {
+                // Appel à la BDD à travers une fonction du modèle.
+                $retour = deleteUser($bdd, htmlspecialchars($_POST['id']));
+                if ($retour) {
+                    $alerte = "Suppression réussie";
+                    header('Refresh: 0.5,index.php?cible=admin&fonction=user');  // refresh dans 0.5sec
+                } else {
+                    $alerte = "La suppression n'a pas fonctionné";
                 }
             }
         }
