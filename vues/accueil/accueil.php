@@ -11,7 +11,7 @@
     <p> <?php
         foreach($donneesQSN as $element){
             if($element['idFixe']==5){     //idFixe = 5 correspond aux données Qui sommes-nous
-                echo $element['donneeFixe'];
+                echo nl2br($element['donneeFixe']);
             }
         }
         ?> </p>
