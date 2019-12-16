@@ -5,7 +5,7 @@
 foreach ($donneesCGU as $element) { ?>
     <div class="blocCGU">
         <?php if($element['idFixe'] ==1){     //1 correspond à l'id des CGU
-            echo $element['donneeFixe'];
+            echo nl2br($element['donneeFixe']);    /*nl2br() - Insère un retour à la ligne HTML à chaque nouvelle ligne*/
         } ?>
     </div>
 <?php } ?>
