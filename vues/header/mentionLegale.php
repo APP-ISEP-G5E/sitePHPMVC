@@ -6,7 +6,7 @@
 foreach ($donneesML as $element) { ?>
     <div class="blocML">
             <?php if($element['idFixe'] ==2){     //2 correspond à l'id des Mentions Légales
-                echo $element['donneeFixe'];
+                echo nl2br($element['donneeFixe']);
             } ?>
     </div>
 <?php } ?>
