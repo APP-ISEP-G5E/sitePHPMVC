@@ -1,35 +1,25 @@
 <?php
-if(empty($_GET['lang'])){
-    $_SESSION['lang'] = "fr";
+$drapeau =null;
+if(isset($_COOKIE['lang'])){
+
+}else{
+    setcookie("lang", "fr", time()+3600);  /* expire dans 1 heure */
 }
-else{
-    switch($_GET['lang']){
-        case "fr":
-            $_SESSION['lang'] = "fr";
-            break;
-        case "en":
-            $_SESSION['lang'] = "en";
-            break;
-        default :
-            $_SESSION['lang'] = "fr"; //au cas ou quelqu'un rentre autre chose que fr/en ou it
-            break;
-    }
-}
-switch($_SESSION['lang']){
+
+switch($_COOKIE['lang']){
     case "fr":
         $fichier_langage = "traduction/fr.inc";
+        $drapeau="pictures/drapeau_FR.png";
         break;
     case "en":
         $fichier_langage = "traduction/en.inc";
+        $drapeau="pictures/drapeau_EN.png";
         break;
+    default :
+        $fichier_langage = "traduction/fr.inc";
+        $drapeau="pictures/drapeau_FR.png";
 }
 
-
-if ($_SESSION['lang'] == "fr") {
-    $drapeau="pictures/drapeau_FR.png";
-} else {
-    $drapeau="pictures/drapeau_EN.png";
-}
-
-include($fichier_langage);
+require($fichier_langage);
 ?>
+

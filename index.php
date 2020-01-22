@@ -1,34 +1,23 @@
 <?php
+ob_start();
 session_start();
-// Appel pour la traduction des pages
-include("config.php");
-
-/**
- * MVC :
- * - index.php : identifie le routeur à appeler en fonction de l'url
- * - Contrôleur : Crée les variables, élabore leurs contenus, identifie la vue et lui envoie les variables
- * - Modèle : contient les fonctions liées à la BDD et appelées par les contrôleurs
- * - Vue : contient ce qui doit être affiché
- **/
+require("config.php");
 
 // Activation des erreurs
 ini_set('display_errors', 1);
 
 // Appel des fonctions du contrôleur
-include("controleurs/fonctions.php");
+require("controleurs/fonctions.php");
 // Appel des fonctions liées à l'affichage
-include("vues/fonctions.php");
+require("vues/fonctions.php");
 
 // On identifie le contrôleur à appeler dont le nom est contenu dans cible passé en GET
 if(isset($_GET['cible']) && !empty($_GET['cible'])) {
-    // Si la variable cible est passé en POST
-    $url = htmlspecialchars($_GET['cible']); //user, sensor, etc.
-
+    $url = htmlspecialchars($_GET['cible']);
 } else {
-    // Si aucun contrôleur défini en GET, on bascule sur utilisateurs
-    $url = 'utilisateurs';
+    $url = 'visiteur';
 }
 
-// On appelle le contrôleur
-include('controleurs/' . $url . '.php');
+// Appel du contrôleur
+require('controleurs/' . $url . '.php');
 
