@@ -1,5 +1,125 @@
-.blocChangement{
+/* page de connexion*/
+
+input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=checkbox] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    margin-bottom: 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 48%;
+    background-color: #0066CC;
+    color: white;
+    padding: 14px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #0022cc;
+}
+
+body {
     display: flex;
-    margin-left: 35%;
-    margin-top: 15%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../../pictures/Pattern_blanc.png");
+}
+
+.conteneurMdp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #cccccc;
+    padding: 20px;
+    width: 30%;
+    height: 35%;
+    min-height: 350px;
+    box-shadow: 8px 8px 2px 1px rgba(0, 0, 255, .2);
+    min-width: 400px;
+    background-color: white;
+    margin: 150px 0;
+}
+
+.conteneurTelephone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #cccccc;
+    padding: 20px;
+    width: 40%;
+    min-height: 250px;
+    box-shadow: 8px 8px 2px 1px rgba(0, 0, 255, .2);
+    min-width: 450px;
+    background-color: white;
+    margin: 150px 0;
+}
+
+.conteneurMail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #cccccc;
+    width:50%;
+    height:25%;
+    min-height:200px;
+    box-shadow: 8px 8px 2px 1px rgba(0, 0, 255, .2);
+    min-width: 500px;
+    background-color: white;
+    margin: 150px 0;
+}
+
+#espace {
+    height: 200px;
+}
+
+.styleBTN {
+    display: flex;
+    background-color: #0066CC;
+    justify-content: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    margin: 10px 0;
+    cursor: pointer;
+    color: white;
+    width: 48%;
+    font-size: 1rem;
+    padding: 14px 0px;
+}
+
+form {
+    width: 80%;
+}
+
+.blocBouton {
+    display: flex;
+    justify-content: space-between;
+
 }

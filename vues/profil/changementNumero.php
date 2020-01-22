@@ -1,8 +1,10 @@
-<div class="blocChangement">
-    <fieldset class="fieldset" style="z-index:5">
-        <form method="post" action="">
-            <p><?php echo _NUMERO; ?></p><input type="text" name="nouveauNumero">
-            <p><button type="submit" name="submit">Valider</button></p>
-        </form>
-    </fieldset>
+<div class="conteneurTelephone">
+    <form method="post" action="">
+        <h1><label for="nouveauNumero" class="profil"><?php echo _NUMERO; ?></label></h1>
+        <input type="tel" name="nouveauNumero" placeholder="Nouveau numéro de téléphone" required>
+        <div class="blocBouton">
+            <button class="styleBTN" type="submit" name="submit" value="Numéro de téléphone">Valider</button>
+            <a class="styleBTN addBTN" href="index.php?cible=utilisateurs&fonction=profil">Annuler</a>
+        </div>
+    </form>
 </div>

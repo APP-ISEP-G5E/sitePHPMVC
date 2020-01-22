@@ -1,109 +1,123 @@
-html{
-	scroll-behavior: smooth;
+html {
+    scroll-behavior: smooth;
 }
+
 body {
-	margin: 0px;
-	background-image: url("../../pictures/Pattern_blanc.png");
+    margin: 0px;
+    background-image: url("../../pictures/Pattern_blanc.png");
 }
+
 /*Style pour les boutons déroulant + déroulant*/
-#vide{
-	height:44px;
-	width:100%;
-	min-height:44px;
+#vide {
+    height: 44px;
+    width: 100%;
+    min-height: 44px;
 }
+
 /*la classe dans laquelle on va mettre l'ensemble de la structure*/
-.accueil_contenu{
-	background: linear-gradient(217deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 70.71%),
-	linear-gradient(127deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%),
-	linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 70.71%) fixed;
-	height: 100%;
-	width: 100%;
+.accueil_contenu {
+    background: linear-gradient(217deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 70.71%),
+    linear-gradient(127deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 70.71%) fixed;
+    height: 100%;
+    width: 100%;
 }
 
-#top{
-	height: 60%;
-	width: 100%;
-	display: flex;
-	justify-content: space-around;
-}
-#bottom{
-	height: 40%;
-	width: 100%;
-	display: flex;
-	background-image: url("../../pictures/Pattern_blanc.png");
-}
-.scroll_boutons{
-	height: 100%;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
+#top {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 
-.scroll_boutons_who{
-	height: 100%;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
+#bottom {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    background-image: url("../../pictures/Pattern_blanc.png");
 }
 
-.scroll_boutons_who h3{
-	margin-bottom: 5px;
-	margin-top: 10px;
+.scroll_boutons {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
+
+.scroll_boutons_who {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.scroll_boutons_who h3 {
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
 #Who h2 {
-	 padding: 30px;
-	 color: gray;
-	 font-size: 40px;
-	 border-radius: 25px;
+    padding: 30px;
+    color: gray;
+    font-size: 40px;
+    border-radius: 25px;
 }
+
 #Who h3 {
-	padding: 30px;
-	color: white;
-	font-size: 55px;
-	border-radius: 25px;
+    padding: 30px;
+    color: white;
+    font-size: 55px;
+    border-radius: 25px;
 }
-#Fplace{
-	height: 40px;
+
+#Fplace {
+    height: 40px;
 }
-#Who{
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+
+#Who {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-#QSNplace{
-	height: 44px;
+
+#QSNplace {
+    height: 44px;
 }
-#QuiSommesNous{
-	min-height:100%;
+
+#QuiSommesNous {
+    min-height: 100%;
 }
-#QuiSommesNous h1{
-	border-radius: 25px;
-	margin: 3% 36%;
-	padding: 1% 1%;
+
+#QuiSommesNous h1 {
+    border-radius: 25px;
+    margin: 3% 36%;
+    padding: 1% 1%;
 }
-#QuiSommesNous p{
-	padding: 1% 10%;
-	text-align: justify;
-	color: dimgray;
-	font-size: 22px;
-	margin-left: 20px;
-	margin-right:  20px;
+
+#QuiSommesNous p {
+    padding: 1% 10%;
+    text-align: justify;
+    color: dimgray;
+    font-size: 22px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
-.resultat{
-	color:white;
-	text-decoration: none;
-	font-size:2rem;
-	font-weight:bold;
-	text-decoration: underline;
-	width: 30%;
-	text-align: center;
+
+.resultat {
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: underline;
+    width: 30%;
+    text-align: center;
 }
 
 

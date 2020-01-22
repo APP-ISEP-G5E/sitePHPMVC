@@ -1,26 +1,30 @@
 <div id="vide"></div>
-<h1>Liste des Utilisateurs inscrits</h1>
-<div id="contenuListeUttilisateurs">
-    <div class="blocListeUtilisateurs">
-        <table id="myTable">
-            <tr >
+<h1>Vos Résultats</h1>
+<div class="blocTable">
+    <div class="overflow">
+        <table id="myTable" class="tableauFAQ">
+            <tr>
                 <!--<th onclick="sortTable(0)">Id</th>-->
-                <th onclick="sortTable(0)">Valeur</i></th>
-                <th onclick="sortTable(1)">Date</th>
-                <th></th>
+                <th onclick="sortTable(0)">Date</th>
+                <th onclick="sortTable(1)">Valeur</th>
+                <th onclick="sortTable(0)">Unite</th>
+
             </tr>
             <?php
             foreach ($donneesMesure as $element) { ?>
-            <tr>
-                <!--<td><?php echo  $element['id']; ?></td>-->
-                <td><?php echo  $element['valeur']; ?></td>
-                <td><?php echo  $element['instant']; ?></td>
-                <td><span class="close">x</span></td>
-            </tr>
+                <tr>
+                    <!--<td><?php echo $element['id']; ?></td>-->
+                    <td><?php echo $element['instant']; ?></td>
+                    <td><?php echo $element['valeur']; ?></td>
+                    <td><?php echo $element['unite']; ?></td>
+                </tr>
             <?php } ?>
         </table>
 
-    </div> <!--bloc questionReponse-->
+    </div>
+</div>
+<div id="moyenne">
+    <p>Le moyenne de tous les utilisateurs est de: <?php echo $moyenneResultats[0][0];?></p>
 </div>
 
 <script>
@@ -68,7 +72,7 @@
                 rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
                 switching = true;
                 // Each time a switch is done, increase this count by 1:
-                switchcount ++;
+                switchcount++;
             } else {
                 /* If no switching has been done AND the direction is "asc",
                 set the direction to "desc" and run the while loop again. */

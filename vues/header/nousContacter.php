@@ -8,11 +8,11 @@
             <a href="mailto:">    <!--pour que ce soit un mail cliquable-->
                 <?php
                 foreach ($donneesNousContacter as $element) { ?>
-                    <?php if($element['idFixe'] == 4){     //4 correspond à l'id mail
+                    <?php if ($element['idFixe'] == 4) {     //4 correspond à l'id mail
                         echo $element['donneeFixe'];        //affiche le mail
                     } ?>
                 <?php } ?>
-            </a>    
+            </a>
         </p>
     </div>
 
@@ -21,8 +21,8 @@
         <p>
             <?php
             foreach ($donneesNousContacter as $element) { ?>
-                <?php if($element['idFixe'] == 3){     //3 correspond à l'id téléphone
-                echo $element['donneeFixe'];          //affiche le numéro de téléphone
+                <?php if ($element['idFixe'] == 3) {     //3 correspond à l'id téléphone
+                    echo $element['donneeFixe'];          //affiche le numéro de téléphone
                 } ?>
             <?php } ?>
         </p>
@@ -38,7 +38,7 @@
     }
 
     // Close the dropdown if the user clicks outside of it
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (!event.target.matches('.dropbtn')) {
             var dropdowns = document.getElementsByClassName("dropdown-content");
             var i;

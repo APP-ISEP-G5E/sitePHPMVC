@@ -1,31 +1,51 @@
 <div id="contenuAccueil">
-    <h1>Données des Utilisateurs</h1>
+    <h1>Utilisateur</h1>
     <input type="text" id="myInput" onkeyup="triFunction()" placeholder="Search for names..">
     <div class="blocTable">
+        <a class="ajoutBTN" href="index.php?cible=gestionnaire&fonction=ajoutUSER"><img src="pictures/plus.png" height="32" width="32" alt="ajouter"></a>
         <div class="overflow">
-            <table id="myTable" class="tableauFAQ">
+        <table id="myTable" class="tableauFAQ">
+            <tr>
+                <th onclick="sortTable(0)">Identifiant</th>
+                <th onclick="sortTable(1)">Nom</th>
+                <th onclick="sortTable(2)">Prenom</th>
+                <th onclick="sortTable(3)">Date de naissance</th>
+                <th onclick="sortTable(4)">Telephone</th>
+                <th onclick="sortTable(5)">Taille</th>
+                <th onclick="sortTable(6)">Poids</th>
+                <th onclick="sortTable(7)">Email</th>
+                <th>Action</th>
+            </tr>
+            <?php
+            foreach ($user as $element) { ?>
                 <tr>
-                    <th onclick="sortTable(0)">ID</th>
-                    <th onclick="sortTable(1)">Nom</th>
-                    <th onclick="sortTable(2)">Prenom</th>
-                    <th onclick="sortTable(3)">Resultat</th>
-                    <th onclick="sortTable(4)">Date</th>
+                    <td><?php echo $element['login']; ?></td>
+                    <td><?php echo $element['nom']; ?></td>
+                    <td><?php echo $element['prenom']; ?></td>
+                    <td><?php echo $element['date_naissance']; ?></td>
+                    <td><?php echo $element['numero_telephone']; ?></td>
+                    <td><?php echo $element['taille']; ?></td>
+                    <td><?php echo $element['poids']; ?></td>
+                    <td><?php echo $element['adresse_mail']; ?></td>
+                    <td>
+                        <div id="blocAction">
+                            <a href="index.php?cible=gestionnaire&fonction=updateUSER&id=<?php echo $element['id']; ?>"
+                               title='Update Record'><img class="stylo" src="pictures/pencil.png" height="32" width="32"
+                                                          alt="modifier"></a>
+                            <a href="index.php?cible=gestionnaire&fonction=deleteUSER&id=<?php echo $element['id']; ?>"
+                               title='Delete Record'><img class="trash" src="pictures/trash.png" height="32" width="32"
+                                                          alt="supprimer"></a>
+                        </div>
+                    </td>
                 </tr>
-                <?php
-                foreach ($donneesUtilisateurs as $element) { ?>
-                    <tr>
-                        <td><?php echo $element['id']; ?></td>
-                        <td><?php echo $element['nom']; ?></td>
-                        <td><?php echo $element['prenom']; ?></td>
-                        <td><?php echo $element['valeur'] . ' '; ?><?php echo $element['unite']; ?></td>
-                        <td><?php echo $element['instant']; ?></td>
-                    </tr>
-                <?php } ?>
-            </table>
+            <?php } ?>
+        </table>
         </div>
     </div>
 </div>
 </div>
+
+
 
 <script>
     function triFunction() {

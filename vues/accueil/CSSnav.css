@@ -1,27 +1,33 @@
 /* nav accueil admin*/
-body{
-    height:100%;
-    width:100%;
-    margin:0 0;
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0 0;
     background-image: url("../../pictures/Pattern_blanc.png");
 }
-#vide{
-    height:44px;
-    width:100%;
-    min-height:44px;
+
+#vide {
+    height: 44px;
+    width: 100%;
+    min-height: 44px;
 }
-#allinone{
-    display:flex;
+
+#allinone {
+    display: flex;
     flex-direction: row;
+    height: 100%;
 }
-#naviguation{
-    background: linear-gradient(to bottom, #ededef,#f5f5f7);
-    width:18%;
-    min-width:200px;
-    margin-top:0px;
+
+#naviguation {
+    background: linear-gradient(to bottom, #ededef, #f5f5f7);
+    width: 300px;
+    min-width: 300px;
+    margin-top: 0px;
+    height: 100%;
 
 }
-#naviguation ul{
+
+#naviguation ul {
     display: block;
     list-style-type: none;
     margin-block-start: 1em;
@@ -30,13 +36,14 @@ body{
     margin-inline-end: 0px;
     padding-inline-start: 40px;
 }
-#naviguation li{
+
+#naviguation li {
     margin: 10px 0px;
 }
 
-.titre{
-    display:block;
-    width:100%;
+.titre {
+    display: block;
+    width: 100%;
     font-size: 110%;
     font-weight: normal;
     font-style: normal;
@@ -44,26 +51,30 @@ body{
     text-shadow: 1px 1px 0 #fff;
     box-shadow: 0px 2px 5px 1px rgba(0, 0, 255, .2);
     position: relative;
-    margin-top: 0px;
+    margin: 8.9% 0;
 }
-.ruban{
-    background-color:#E7E6E6;
+
+.ruban {
+    background-color: #E7E6E6;
     display: block;
     padding: 8px 5px 10px 20px;
-    font-family: "Helvetica Neue","Helvetica","Arial",sans-serif;
-    font-weight:bold;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-weight: bold;
+    padding: 5%;
+}
 
+.sous-titre {
+    font-weight: normal;
+    color: #555555;
+    text-decoration: none;
 }
-.sous-titre{
-    font-weight:normal;
-    color:#555555;
-    text-decoration:none;
+
+#margin {
+    height: 20px;
+    width: 100%;
 }
-#margin{
-    heigth:20px;
-    width:100%;
-}
-nav a{
-    text-decoration:none;
-    color:black;
+
+nav a {
+    text-decoration: none;
+    color: black;
 }

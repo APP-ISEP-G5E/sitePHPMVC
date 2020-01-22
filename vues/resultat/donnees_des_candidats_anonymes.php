@@ -1,31 +1,27 @@
-<div id="vide"></div>
-<h1>Données des Utilisateurs</h1>
-<div id="contenuAnonymesUttilisateurs">
-    <div class="blocListeUtilisateurs">
-        <table id="myTable">
-            <tr>
-                <!--<th onclick="sortTable(0)">Id</th>-->
-                <th onclick="sortTable(0)">Résultat</i></th>
-                <th onclick="sortTable(1)">Date</th>
-                <th onclick="sortTable(2)">Id Capteur</th>
-                <th></th>
-            </tr>
-            <?php
-            foreach ($donneesUtilisateurs as $element) { ?>
+<div id="contenuAccueil">
+    <h1>Données des Utilisateurs</h1>
+    <div class="blocTable">
+        <div class="overflow">
+            <table id="myTable">
                 <tr>
-                    <!--<td><?php echo  $element['id']; ?></td>-->
-                    <td><?php echo  $element['valeur']; ?></td>
-                    <td><?php echo  $element['instant']; ?></td>
-                    <td><?php echo  $element['Capteur_Actionneur_idCapteur']; ?></td>
-                    <td><span class="close">x</span></td>
-
+                    <!--<th onclick="sortTable(0)">Id</th>-->
+                    <th onclick="sortTable(0)">Résultat</i></th>
+                    <th onclick="sortTable(1)">Date</th>
+                    <th onclick="sortTable(2)">Id composant</th>
                 </tr>
-            <?php } ?>
-        </table>
-
-    </div>  <!--bloc questionReponse-->
+                <?php
+                foreach ($donneesUtilisateurs as $element) { ?>
+                    <tr>
+                        <!--<td><?php echo $element['id']; ?></td>-->
+                        <td><?php echo $element['valeur'] . ' '; ?><?php echo $element['unite']; ?></td>
+                        <td><?php echo $element['instant']; ?></td>
+                        <td><?php echo $element['Capteur_Actionneur_idCapteur']; ?></td>
+                    </tr>
+                <?php } ?>
+            </table>
+        </div>
+    </div>
 </div>
-
 <script>
     function sortTable(n) {
         var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
@@ -71,7 +67,7 @@
                 rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
                 switching = true;
                 // Each time a switch is done, increase this count by 1:
-                switchcount ++;
+                switchcount++;
             } else {
                 /* If no switching has been done AND the direction is "asc",
                 set the direction to "desc" and run the while loop again. */

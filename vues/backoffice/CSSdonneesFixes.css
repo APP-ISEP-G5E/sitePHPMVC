@@ -1,0 +1,80 @@
+body {
+    background-image: url("../../pictures/Pattern_blanc.png");
+    margin: 0 0;
+}
+
+#vide {
+    height: 44px;
+}
+
+#contenuAccueil {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    overflow: auto;
+}
+
+thead th, thead td {
+    text-align: center;
+    padding: 10px;
+    background-color: #f2f2f2;
+}
+
+#selectionner {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.donneesFixes {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.formAdd {
+    margin: 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #cccccc;
+    padding: 15px;
+    min-height: 150px;
+    width: 500px;
+    box-shadow: 8px 8px 2px 1px rgba(0, 0, 255, .2);
+    min-width: 300px;
+    background-color: white;
+}
+
+label {
+    display: block;
+    width: 80%;
+    font-size: 1.2em;
+}
+
+#addTable td {
+    text-align: left;
+    padding-left: 10px;
+    font-size: 1rem;
+}
+
+.titreDF {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+
